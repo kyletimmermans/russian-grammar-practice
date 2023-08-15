@@ -1,0 +1,202 @@
+{
+  "comparative": [
+    {
+      "name": "большой",
+      "translation": "big",
+      "ec": "bigger",
+      "c": "больше"
+    },
+    {
+      "name": "маленький",
+      "translation": "small",
+      "ec": "smaller",
+      "c": "меньше"
+    },
+    {
+      "name": "старый",
+      "translation": "old",
+      "ec": "older",
+      "c": "старше"
+    },
+    {
+      "name": "молодой",
+      "translation": "young",
+      "ec": "younger",
+      "c": "моложе"
+    },
+    {
+      "name": "хороший",
+      "translation": "good",
+      "ec": "better",
+      "c": "лучше"
+    },
+    {
+      "name": "плохой",
+      "translation": "bad",
+      "ec": "worse",
+      "c": "хуже"
+    },
+    {
+      "name": "длинный",
+      "translation": "long (distance)",
+      "ec": "longer",
+      "c": "длиннее"
+    },
+    {
+      "name": "короткий",
+      "translation": "short",
+      "ec": "shorter",
+      "c": "короче"
+    },
+    {
+      "name": "тёплый",
+      "translation": "warm",
+      "ec": "warmer",
+      "c": "теплее"
+    },
+    {
+      "name": "холодный",
+      "translation": "cold",
+      "ec": "colder",
+      "c": "холоднее"
+    },
+    {
+      "name": "высокий",
+      "translation": "high",
+      "ec": "higher",
+      "c": "выше"
+    },
+    {
+      "name": "низкий",
+      "translation": "low",
+      "ec": "lower",
+      "c": "ниже"
+    },
+    {
+      "name": "дорогой",
+      "translation": "expensive",
+      "ec": "more expensive",
+      "c": "дороже"
+    },
+    {
+      "name": "дешёвый",
+      "translation": "cheap",
+      "ec": "cheaper",
+      "c": "дешевле"
+    },
+    {
+      "name": "быстрый",
+      "translation": "fast",
+      "ec": "faster",
+      "c": "быстрее"
+    },
+    {
+      "name": "медленный",
+      "translation": "slow",
+      "ec": "slower",
+      "c": "медленнее"
+    },
+    {
+      "name": "сильный",
+      "translation": "strong",
+      "ec": "stronger",
+      "c": "сильнее"
+    },
+    {
+      "name": "слабый",
+      "translation": "weak",
+      "ec": "weaker",
+      "c": "слабее"
+    },
+    {
+      "name": "близкий",
+      "translation": "close / near",
+      "ec": "closer",
+      "c": "ближе"
+    },
+    {
+      "name": "далёкий",
+      "translation": "far",
+      "ec": "farther",
+      "c": "дальше"
+    },
+    {
+      "name": "сложный",
+      "translation": "complex",
+      "ec": "more complex",
+      "c": "сложнее"
+    },
+    {
+      "name": "простой",
+      "translation": "simple",
+      "ec": "simpler",
+      "c": "проще"
+    },
+    {
+      "name": "яркий",
+      "translation": "bright",
+      "ec": "brighter",
+      "c": "ярче"
+    },
+    {
+      "name": "тёмный",
+      "translation": "dark",
+      "ec": "darker",
+      "c": "темнее"
+    },
+    {
+      "name": "строгий",
+      "translation": "strict",
+      "ec": "stricter",
+      "c": "строже"
+    },
+    {
+      "name": "важный",
+      "translation": "important",
+      "ec": "more important",
+      "c": "важнее"
+    },
+    {
+      "name": "важный",
+      "translation": "important",
+      "ec": "more important",
+      "c": "важнее"
+    },
+    {
+      "name": "легкий",
+      "translation": "easy / light",
+      "ec": "easier / lighter",
+      "c": "легче"
+    },
+    {
+      "name": "долгий",
+      "translation": "long (time)",
+      "ec": "longer",
+      "c": "дольше"
+    },
+    {
+      "name": "злой",
+      "translation": "angry / mean",
+      "ec": "angrier / meaner",
+      "c": "злее"
+    },
+    {
+      "name": "смелый",
+      "translation": "brave",
+      "ec": "braver",
+      "c": "смелее"
+    },
+    {
+      "name": "умный",
+      "translation": "smart",
+      "ec": "smarter",
+      "c": "умнее"
+    },
+    {
+      "name": "горячий",
+      "translation": "hot",
+      "ec": "hotter",
+      "c": "горячее"
+    }
+  ]
+}
