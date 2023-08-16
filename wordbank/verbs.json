@@ -2651,31 +2651,6 @@
       }
     },
     {
-      "name": "встать",
-      "translation": "to stand up",
-      "form": "perfective",
-      "conjugations": {
-        "present": {
-          "ya": "встану",
-          "ty": "встанешь",
-          "on": "встанет",
-          "my": "встанем",
-          "vy": "встанете",
-          "oni": "встанут"
-        },
-        "past": {
-          "m": "встал",
-          "f": "встала",
-          "n": "встало",
-          "p": "встали"
-        },
-        "imperative": {
-          "ty": "Встань",
-          "vy": "Встаньте"
-        }
-      }
-    },
-    {
       "name": "готовить",
       "translation": "to prepare / to cook",
       "form": "imperfective",
