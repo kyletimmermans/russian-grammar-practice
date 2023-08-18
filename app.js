@@ -61,7 +61,11 @@ const randomGender = (plural) => {
 
 const randomCase = (animate) => {
   if (animate == true) {
-    let gramcase = getRandomString(["gn", "dt", "aca", "aci", "in", "pr"]);
+    let gramcase = getRandomString(["gn", "dt", "ac", "in", "pr"]);
+    // 2nd round for accusative choice (1/4 chance for animate)
+    if (gramcase == "ac") {
+      gramcase = getRandomString(["aca", "aci", "aci", "aci",]);
+    }
     let finalCase;
     switch (gramcase) {
       case "gn":
@@ -270,7 +274,8 @@ const randomQuestionWord = (data) => {
   let gramcase = randomCase(true);
 
   if (randomQuestion.name == "что" || randomQuestion.name == "кто") {
-    if (gramcase[0] == "aca" || gramcase[0] == "aca") {
+    // что and кто have no animate option
+    if (gramcase[0] == "aca" || gramcase[0] == "aci") {
       gramcase[1] = "Accusative";
       gramcase[0] = "ac";
     }
