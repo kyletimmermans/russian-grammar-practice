@@ -2726,6 +2726,31 @@
       }
     },
     {
+      "name": "пытаться",
+      "translation": "to attempt",
+      "form": "imperfective",
+      "conjugations": {
+        "present": {
+          "ya": "пытаюсь",
+          "ty": "пытаешься",
+          "on": "пытается",
+          "my": "пытаемся",
+          "vy": "пытаетесь",
+          "oni": "пытаются"
+        },
+        "past": {
+          "m": "пытался",
+          "f": "пыталась",
+          "n": "пыталось",
+          "p": "пытались"
+        },
+        "imperative": {
+          "ty": "Пытайся",
+          "vy": "Пытайтесь"
+        }
+      }
+    },
+    {
       "name": "попытаться",
       "translation": "to attempt",
       "form": "perfective",
@@ -2747,6 +2772,31 @@
         "imperative": {
           "ty": "Попытайся",
           "vy": "Попытайтесь"
+        }
+      }
+    }
+    {
+      "name": "смеяться",
+      "translation": "to laugh at somebody/something",
+      "form": "imperfective",
+      "conjugations": {
+        "present": {
+          "ya": "смеюсь",
+          "ty": "смеёшься",
+          "on": "смеётся",
+          "my": "смеёмся",
+          "vy": "смеётесь",
+          "oni": "смеются"
+        },
+        "past": {
+          "m": "смеялся",
+          "f": "смеялась",
+          "n": "смеялось",
+          "p": "смеялись"
+        },
+        "imperative": {
+          "ty": "Смейся",
+          "vy": "Смейтесь"
         }
       }
     }
