@@ -59,15 +59,28 @@ const randomGender = (plural) => {
   }
 };
 
-const randomCase = (animate) => {
+const randomCase = (animate, plural) => {
+  var gramcase;
+
   if (animate == true) {
-    let gramcase = getRandomString(["gn", "dt", "ac", "in", "pr"]);
+
+    // We also want to do nominative plural for plural nouns and adjectives
+    if (plural == 's') {
+      gramcase = getRandomString(["gn", "dt", "ac", "in", "pr"]);
+    } else {
+      gramcase = getRandomString(["nm", "gn", "dt", "ac", "in", "pr"]);
+    }
+
     // 2nd round for accusative choice (1/4 chance for animate)
     if (gramcase == "ac") {
       gramcase = getRandomString(["aca", "aci", "aci", "aci",]);
     }
+
     let finalCase;
     switch (gramcase) {
+      case "nm":
+        finalCase = "Nominative";
+        break;
       case "gn":
         finalCase = "Genitive";
         break;
@@ -90,9 +103,19 @@ const randomCase = (animate) => {
 
     return [gramcase, finalCase];
   } else {
-    let gramcase = getRandomString(["gn", "dt", "ac", "in", "pr"]);
+
+    // We also want to do nominative plural for plural nouns and adjectives
+    if (plural == 's') {
+      gramcase = getRandomString(["gn", "dt", "ac", "in", "pr"]);
+    } else {
+      gramcase = getRandomString(["nm", "gn", "dt", "ac", "in", "pr"]);
+    }
+
     let finalCase;
     switch (gramcase) {
+      case "nm":
+        finalCase = "Nominative";
+        break;
       case "gn":
         finalCase = "Genitive";
         break;
@@ -185,7 +208,7 @@ const randomVerb = (data) => {
 
 const randomNoun = (data, amount) => {
   let randomNoun = data.noun[getRandomInt(0, data.noun.length - 1)];
-  let gramcase = randomCase(false);
+  let gramcase = randomCase(false, amount);
 
   // nm case of noun, translation, case, gender, animate, final noun
   return [
@@ -200,7 +223,7 @@ const randomNoun = (data, amount) => {
 
 const randomAdjective = (data, amount) => {
   let randomAdj = data.adjective[getRandomInt(0, data.adjective.length - 1)];
-  let gramcase = randomCase(true);
+  let gramcase = randomCase(true, amount);
   let gender;
   if (amount == "s") {
     gender = randomGender(false);
@@ -221,7 +244,7 @@ const randomAdjective = (data, amount) => {
 
 const randomPronoun = (data) => {
   let randomPronoun = data.pronoun[getRandomInt(0, data.pronoun.length - 1)];
-  let gramcase = randomCase(false);
+  let gramcase = randomCase(false, 's');
   let preposition;
 
   if (["он / оно", "она", "они"].includes(randomPronoun.name)) {
@@ -248,7 +271,7 @@ const randomPossDemo = (data, word) => {
       data.demonstrative[getRandomInt(0, data.demonstrative.length - 1)];
   }
 
-  let gramcase = randomCase(true);
+  let gramcase = randomCase(true, 's');
   let gender = randomGender(true);
 
   if (word == "poss") {
@@ -271,7 +294,7 @@ const randomPossDemo = (data, word) => {
 const randomQuestionWord = (data) => {
   let randomQuestion =
     data.questionword[getRandomInt(0, data.questionword.length - 1)];
-  let gramcase = randomCase(true);
+  let gramcase = randomCase(true, 's');
 
   if (randomQuestion.name == "что" || randomQuestion.name == "кто") {
     // что and кто have no animate option
