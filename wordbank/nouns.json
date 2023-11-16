@@ -241,18 +241,18 @@
       }
     },
     {
-      "name": "дети",
-      "translation": "children",
-      "gender": "masculine",
+      "name": "ребёнок",
+      "translation": "child",
+      "gender": "neuter",
       "animate": true,
       "conjugations": {
         "s": {
-          "nm": "дети",
-          "gn": "детей",
-          "dt": "детям",
-          "ac": "детей",
-          "in": "детьми",
-          "pr": "детях"
+          "nm": "ребёнок",
+          "gn": "ребёнка",
+          "dt": "ребёнку",
+          "ac": "ребёнка",
+          "in": "ребёнком",
+          "pr": "ребёнке"
         },
         "p": {
           "nm": "дети",
