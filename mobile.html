@@ -51,6 +51,10 @@ body {
 
 <body>
 
+	<!-- Don't let mobile keyboard drag down the page after typing answer -->
+	<script>document.addEventListener('focusout', function(e) {window.scrollTo(0, 0)});</script>
+
+
 	<!-- Exercises Dropdown -->
 	<div class="dropdown position-fixed top-0 start-0 p-2">
 	  	<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">Exercise Type </button>
