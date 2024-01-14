@@ -17,7 +17,7 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 	<link rel="manifest" href="site.webmanifest">
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 	<script>if(window.innerWidth>768){window.location.replace("/");}</script>
 	<script src="app.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -64,17 +64,25 @@ body {
 ::-webkit-input-placeholder { text-align: center; }
 :-moz-placeholder { text-align: center; }
 ::-moz-placeholder { text-align: center; }
-:-ms-input-placeholder { text-align: center;}
+:-ms-input-placeholder { text-align: center; }
 </style>
 
 <body>
 
-	<!-- Don't let mobile keyboard drag down the page after typing answer -->
-	<script>document.addEventListener('focusout', function(e) {window.scrollTo(0, 0)});</script>
+	<script>
+	// Safari centered-title to question spacing is not good by default but Firefox is
+	/*
+	if (!(/(CriOS|FxiOS|OPiOS|mercury)/i.test(navigator.userAgent))) {
 
+	}
+	*/
+
+	// Don't let mobile keyboard drag down the page after typing answer
+	document.addEventListener('focusout', function(e) {window.scrollTo(0, 0)});
+    </script>
 
 	<!-- Exercises Dropdown -->
-	<div class="dropdown position-fixed top-0 start-0 p-2">
+	<div class="dropdown top-0 start-0 p-2">
 	  	<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">Exercise Type </button>
 	  	<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 		  	<li><button class="dropdown-item" type="button" onclick="verb()">Verb Conjugations</button></li>
@@ -91,7 +99,7 @@ body {
 	</div>
 
 	<!-- About Button -->
-	<div class="position-fixed top-0 end-0 p-2">
+	<div class="position-absolute top-0 end-0 p-2">
         <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#aboutModal">About</a>
     </div>
 
@@ -105,9 +113,9 @@ body {
 	      </div>
 	      <div class="modal-body">
 	        Made with 💚 by <a href="https://www.kyles.world/" target="_blank" rel="noopener noreferrer">Kyle</a>
-	    	</br></br>
+	    	<br><br>
 	    	Found a vocab / grammar issue or technical bug? Have an improvement in mind? Let me know on <a href="https://www.github.com/rus-grammar-practice/rus-grammar-practice.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>!
-	    	</br></br>
+	    	<br><br>
 	    	<i>Russian Learning Resources:</i>
 			<ul>
 			  <li><a href="https://raw.githubusercontent.com/rus-grammar-practice/rus-grammar-practice.github.io/master/resources/All%20Russian%20Case%20Declensions.jpeg" target="_blank" rel="noopener noreferrer">Russian Case Chart</a></li>
@@ -135,18 +143,16 @@ body {
     <!-- Page loads w/ verbs first-->
 	<h1 class="centered-title">Verb Conjugations</h1>
 
-	</br></br>
     <div class="d-flex flex-column justify-content-center align-items-center vh-100" style="overflow: hidden;">
-        </br>
         <div class="row">
             <div class="col" id="question"></div>
         </div>
-    	</br>
+    	<br>
         <div class="row">
             <input class="form-control-lg" id="inputAnswer" type="text" placeholder="Answer" spellcheck="false">
             <button type="button" class="btn btn-outline-info" onclick="checkAnswer()">Check</button>
         </div>
-        </br></br>
+        <br><br>
         <div class="row">
             <div class="col" id="result">Result: </div>
         </div>
