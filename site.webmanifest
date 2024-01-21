@@ -1,1 +1,13 @@
-{"name":"Russian Grammar Practice","short_name":"Russian Grammar Practice","icons":[{"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],"theme_color":"#ffffff","background_color":"#ffffff","display":"standalone"}
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square310x310logo src="/favicon/mstile-310x310.png"/>
+            <square310x150logo src="/favicon/mstile-310x150.png"/>
+            <square150x150logo src="/favicon/mstile-150x150.png"/>
+            <square144x144logo src="/favicon/mstile-144x144.png"/>
+            <square70x70logo src="/favicon/mstile-70x70.png"/>
+            <TileColor>#2b5797</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>
