@@ -1,0 +1,36 @@
+# robots.txt 
+#
+#     .__________________________.
+#     | .___________________. |==|
+#     | | ................. | |  |
+#     | | ::[ Dear robot ]: | |  |
+#     | | ::::[ be nice ]:: | |  |
+#     | | ::::::::::::::::: | |  |
+#     | | ::::::::::::::::: | |  |
+#     | | ::::::::::::::::: | |  |
+#     | | ::::::::::::::::: | | ,|
+#     | !___________________! |(c|
+#     !_______________________!__!
+#    /                            \
+#   /  [][][][][][][][][][][][][]  \
+#  /  [][][][][][][][][][][][][][]  \
+# (  [][][][][____________][][][][]  )
+#  \ ------------------------------ /
+#   \______________________________/
+#
+
+User-agent: *
+Allow: /$
+Disallow: /favicon/
+Disallow: /resources/
+Disallow: /wordbank/
+Disallow: /CNAME
+Disallow: /LICENSE
+Disallow: /app.js
+Disallow: /apple-touch-icon.png
+Disallow: /browserconfig.xml
+Disallow: /favicon.ico
+Disallow: /favicon.svg
+Disallow: /site.webmanifest
+
+Sitemap: https://www.russiangrammarpractice.com/sitemap.xml
