@@ -33,14 +33,10 @@ body {
 	background-color: rgb(46, 56, 66);
 }
 
-.centered-title {
-	position: absolute;
-	top: 20%;
-	left: 50%;
-	-moz-transform: translateX(-50%) translateY(-20%);
-	-webkit-transform: translateX(-50%) translateY(-20%);
-	transform: translateX(-50%) translateY(-20%);
+#centered-title {
+	position: relative;
 	color: white;
+	text-align: center;
 	z-index: -1;
 }
 
@@ -130,11 +126,13 @@ body {
 	  </div>
 	</div>
 
-    <!-- Page loads w/ verbs first-->
-	<h1 class="centered-title">Verb Conjugations</h1>
-
     <div class="d-flex flex-column justify-content-center align-items-center vh-100">
         <br>
+        <div class="row">
+		    <!-- Page loads w/ verbs first-->
+			<h1 class="col" id="centered-title">Verb Conjugations</h1>
+        </div>
+        <br><br>
         <div class="row">
             <div class="col" id="question"></div>
         </div>

@@ -335,7 +335,7 @@ const randomComparative = (data) => {
 
 
 const verb = () => {
-  document.querySelector(".centered-title").textContent = "Verb Conjugations";
+  document.querySelector("#centered-title").textContent = "Verb Conjugations";
 
   if (fetchList.includes("verb") == false) {
     fetch("./wordbank/verbs.json")
@@ -351,8 +351,8 @@ const verb = () => {
         while (q[3] == "-") {
           q = randomVerb(jsonVerb);
         }
-        document.getElementById("question").innerHTML = q[2]+" ____ (<b>"+q[0]
-                                                        +"</b> - \""+q[4]+"\") ("
+        document.getElementById("question").innerHTML = q[2]+" ____ <b>"+q[0]
+                                                        +"</b> (\""+q[4]+"\") ("
                                                         +q[1]+")";
         correctAnswer = q[3];
       });
@@ -371,7 +371,7 @@ const verb = () => {
 };
 
 const singNoun = () => {
-  document.querySelector(".centered-title").innerHTML = "Singular Noun Cases";
+  document.querySelector("#centered-title").innerHTML = "Singular Noun Cases";
 
   if (fetchList.includes("noun") == false) {
     fetch("./wordbank/nouns.json")
@@ -411,7 +411,7 @@ const singNoun = () => {
 };
 
 const plurNoun = () => {
-  document.querySelector(".centered-title").textContent = "Plural Noun Cases";
+  document.querySelector("#centered-title").textContent = "Plural Noun Cases";
 
   if (fetchList.includes("noun") == false) {
     fetch("./wordbank/nouns.json")
@@ -450,7 +450,7 @@ const plurNoun = () => {
 };
 
 const singAdj = () => {
-  document.querySelector(".centered-title").textContent = "Singular Adjective Cases";
+  document.querySelector("#centered-title").textContent = "Singular Adjective Cases";
 
   if (fetchList.includes("adj") == false) {
     fetch("./wordbank/adjectives.json")
@@ -478,7 +478,7 @@ const singAdj = () => {
 };
 
 const plurAdj = () => {
-  document.querySelector(".centered-title").textContent = "Plural Adjective Cases";
+  document.querySelector("#centered-title").textContent = "Plural Adjective Cases";
 
   if (fetchList.includes("adj") == false) {
     fetch("./wordbank/adjectives.json")
@@ -505,7 +505,7 @@ const plurAdj = () => {
 };
 
 const pronoun = () => {
-  document.querySelector(".centered-title").textContent = "Pronoun Cases";
+  document.querySelector("#centered-title").textContent = "Pronoun Cases";
 
   if (fetchList.includes("pro") == false) {
     fetch("./wordbank/pronouns.json")
@@ -551,7 +551,7 @@ const pronoun = () => {
 };
 
 const possesive = () => {
-  document.querySelector(".centered-title").textContent = "Possesive Pronoun + Сам Cases";
+  document.querySelector("#centered-title").textContent = "Possesive Pronoun + Сам Cases";
 
   if (fetchList.includes("poss") == false) {
     fetch("./wordbank/possessives+sam.json")
@@ -576,7 +576,7 @@ const possesive = () => {
 };
 
 const demonstrative = () => {
-  document.querySelector(".centered-title").textContent = "Demonstrative + Весь Cases";
+  document.querySelector("#centered-title").textContent = "Demonstrative + Весь Cases";
 
   if (fetchList.includes("demo") == false) {
     fetch("./wordbank/demonstratives+ves.json")
@@ -601,7 +601,7 @@ const demonstrative = () => {
 };
 
 const questionword = () => {
-  document.querySelector(".centered-title").textContent = "Question Word Cases";
+  document.querySelector("#centered-title").textContent = "Question Word Cases";
 
   if (fetchList.includes("ques") == false) {
     fetch("./wordbank/questionwords.json")
@@ -637,7 +637,7 @@ const questionword = () => {
 };
 
 const comparative = () => {
-  document.querySelector(".centered-title").textContent = "Comparative Creation";
+  document.querySelector("#centered-title").textContent = "Comparative Creation";
 
   if (fetchList.includes("comp") == false) {
     fetch("./wordbank/comparatives.json")
@@ -683,7 +683,7 @@ const checkAnswer = () => {
 
     // Find out which exercise we need to get a new question from
     // By looking at the current title that we set
-    currExerciseType = document.querySelector(".centered-title").textContent;
+    currExerciseType = document.querySelector("#centered-title").textContent;
 
     switch (currExerciseType) {
       case "Verb Conjugations":

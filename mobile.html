@@ -34,13 +34,9 @@ body {
 	overflow: hidden;
 }
 
-.centered-title {
-	position: absolute;
-	top: 15%;
-	left: 50%;
-	-moz-transform: translateX(-50%) translateY(-15%);
-	-webkit-transform: translateX(-50%) translateY(-15%);
-	transform: translateX(-50%) translateY(-15%);
+#centered-title {
+	padding-top: 7vh;
+	position: relative;
 	color: white;
 	z-index: -1;
 	font-size: 32px;
@@ -76,6 +72,16 @@ body {
 	<script>
 	// Don't let mobile keyboard drag down the page after typing answer
 	document.addEventListener('focusout', function(e) {window.scrollTo(0, 0)});
+
+	document.addEventListener('focusin', function(e) {
+		setTimeout(() => {
+			const question = document.getElementById("question");
+			question.scrollIntoView({
+				behavior: 'smooth',
+				block: 'start'
+			});
+		}, 75);
+	});
     </script>
 
 	<!-- Exercises Dropdown -->
@@ -138,10 +144,12 @@ body {
 	  </div>
 	</div>
 
-    <!-- Page loads w/ verbs first-->
-	<h1 class="centered-title">Verb Conjugations</h1>
-
-    <div class="d-flex flex-column justify-content-center align-items-center vh-100" style="overflow: hidden;">
+    <div class="d-flex flex-column justify-content-center align-items-center" style="overflow: hidden;">
+        <div class="row">
+        	<!-- Page loads w/ verbs first-->
+            <h1 class="col" id="centered-title">Verb Conjugations</h1>
+        </div>
+    	<br>
         <div class="row">
             <div class="col" id="question"></div>
         </div>
