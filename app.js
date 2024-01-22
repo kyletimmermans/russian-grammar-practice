@@ -675,11 +675,18 @@ const checkAnswer = () => {
       "</span>";
   }
 
+  // Disable button to prevent issues
+  var answerButton = document.getElementById("check-button");
+  answerButton.disabled = true;
+
   // Wait 5 seconds for user to read corrected answer, then reset
   setTimeout(() => {
     // Reset Result and input answer field
     document.getElementById("result").innerHTML = "Result: ";
     document.getElementById("inputAnswer").value = "";
+
+    // Re-enable button
+    answerButton.disabled = false;
 
     // Find out which exercise we need to get a new question from
     // By looking at the current title that we set
