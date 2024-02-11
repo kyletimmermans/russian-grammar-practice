@@ -20,7 +20,11 @@
 </head>
 
 <style>
-body { overflow: hidden; }
+body {
+	/* Putting this line in main.css breaks bootstrap color variabless */
+	background-color: rgb(46, 56, 66);
+	overflow: hidden;
+}
 
 #centered-title {
 	padding-top: 7vh;
