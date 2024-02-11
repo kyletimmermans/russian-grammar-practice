@@ -42,6 +42,7 @@ body {
 	// Don't let mobile keyboard drag down the page after typing answer
 	document.addEventListener('focusout', function(e) { window.scrollTo(0, 0) });
 
+	// When mobile keyboard pops up, continue to show the question and don't pull page down
 	document.addEventListener('focusin', function(e) {
 		setTimeout(() => {
 			const question = document.getElementById("question");
