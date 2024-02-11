@@ -1,0 +1,29 @@
+body { --bs-body-bg: rgb(46, 56, 66); }
+
+#centered-title {
+	position: relative;
+	color: white;
+	text-align: center;
+	z-index: -1;
+}
+
+#question {
+	color: white;
+	text-align: center;
+}
+
+#result {
+	color: white;
+	text-align: center;
+}
+
+.dropdown-item:hover {
+    background-color: #9ceafa !important;
+}
+
+/* Center input box placeholder */
+::placeholder { text-align: center; }
+::-webkit-input-placeholder { text-align: center; }
+:-moz-placeholder { text-align: center; }
+::-moz-placeholder { text-align: center; }
+:-ms-input-placeholder { text-align: center; }
