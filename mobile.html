@@ -40,7 +40,7 @@ body {
 
 	<script>
 	// Don't let mobile keyboard drag down the page after typing answer
-	document.addEventListener('focusout', function(e) {window.scrollTo(0, 0)});
+	document.addEventListener('focusout', function(e) { window.scrollTo(0, 0) });
 
 	document.addEventListener('focusin', function(e) {
 		setTimeout(() => {
@@ -118,16 +118,13 @@ body {
 			<!-- Page loads w/ verbs first-->
 			<h1 class="col" id="centered-title">Verb Conjugations</h1>
 		</div>
-		<br>
-		<div class="row">
+		<div style="margin-top: 6vh; margin-bottom: 6vh;" class="row">
 			<div class="col" id="question"></div>
 		</div>
-		<br>
-		<div class="row">
+		<div style="margin-bottom: 9vh;" class="row">
 			<input class="form-control-lg" id="inputAnswer" type="text" placeholder="Answer" spellcheck="false">
 			<button type="button" id="check-button" class="btn btn-outline-info" onclick="checkAnswer()">Check</button>
 		</div>
-		<br><br>
 		<div class="row">
 			<div class="col" id="result">Result: </div>
 		</div>
