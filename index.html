@@ -23,9 +23,9 @@
 /* Putting this line in main.css breaks bootstrap color variabless */
 body { background-color: rgb(46, 56, 66); }
 
-#question { font-size: 38px; }
+#centered-title { font-size: 2.92vw; }
 
-#result { font-size: 38px; }
+#question, #result { font-size: 2.64vw; }
 </style>
 
 <body>
@@ -91,18 +91,18 @@ body { background-color: rgb(46, 56, 66); }
 	</div>
 
 	<div class="d-flex flex-column justify-content-center align-items-center vh-100">
-		<div class="row" style="margin-top: 3.35vh; margin-bottom: 3.35vh;">
+		<div class="row" style="margin-bottom: 7vh;">
 			<!-- Page loads w/ verbs first-->
-			<h1 class="col" id="centered-title">Verb Conjugations</h1>
+			<h1 class="col" id="centered-title"><b>Verb Conjugations</b></h1>
 		</div>
-		<div class="row" style="margin-top: 3.35vh; margin-bottom: 3.35vh;">
+		<div class="row" style="margin-top: 6vh; margin-bottom: 8vh;">
 			<div class="col" id="question"></div>
 		</div>
 		<div class="row">
 			<input class="form-control-lg" id="inputAnswer" type="text" placeholder="Answer" spellcheck="false">
 			<button type="button" id="check-button" class="btn btn-outline-info" onclick="checkAnswer()">Check</button>
 		</div>
-		<div class="row" style="margin-top: 6.7vh;">
+		<div class="row" style="margin-top: 8vh;">
 			<div class="col" id="result">Result: </div>
 		</div>
 	</div>
