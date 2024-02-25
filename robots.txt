@@ -22,6 +22,7 @@
 User-agent: *
 Allow: /$
 Disallow: /favicon/
+Disallow: /mobile/
 Disallow: /resources/
 Disallow: /wordbank/
 Disallow: /CNAME
