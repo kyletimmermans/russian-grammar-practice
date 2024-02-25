@@ -338,7 +338,7 @@ const verb = () => {
   document.querySelector("#centered-title").textContent = "Verb Conjugations";
 
   if (fetchList.includes("verb") == false) {
-    fetch("./wordbank/verbs.json")
+    fetch("/wordbank/verbs.json")
       .then((response) => response.json())
       .then((data) => {
         jsonVerb = data;
@@ -374,7 +374,7 @@ const singNoun = () => {
   document.querySelector("#centered-title").innerHTML = "Singular Noun Cases";
 
   if (fetchList.includes("noun") == false) {
-    fetch("./wordbank/nouns.json")
+    fetch("/wordbank/nouns.json")
       .then((response) => response.json())
       .then((data) => {
         jsonNoun = data;
@@ -414,7 +414,7 @@ const plurNoun = () => {
   document.querySelector("#centered-title").textContent = "Plural Noun Cases";
 
   if (fetchList.includes("noun") == false) {
-    fetch("./wordbank/nouns.json")
+    fetch("/wordbank/nouns.json")
       .then((response) => response.json())
       .then((data) => {
         jsonNoun = data;
@@ -453,7 +453,7 @@ const singAdj = () => {
   document.querySelector("#centered-title").textContent = "Singular Adjective Cases";
 
   if (fetchList.includes("adj") == false) {
-    fetch("./wordbank/adjectives.json")
+    fetch("/wordbank/adjectives.json")
       .then((response) => response.json())
       .then((data) => {
         jsonAdj = data;
@@ -481,7 +481,7 @@ const plurAdj = () => {
   document.querySelector("#centered-title").textContent = "Plural Adjective Cases";
 
   if (fetchList.includes("adj") == false) {
-    fetch("./wordbank/adjectives.json")
+    fetch("/wordbank/adjectives.json")
       .then((response) => response.json())
       .then((data) => {
         jsonAdj = data;
@@ -508,7 +508,7 @@ const pronoun = () => {
   document.querySelector("#centered-title").textContent = "Pronoun Cases";
 
   if (fetchList.includes("pro") == false) {
-    fetch("./wordbank/pronouns.json")
+    fetch("/wordbank/pronouns.json")
       .then((response) => response.json())
       .then((data) => {
         jsonPronoun = data;
@@ -554,7 +554,7 @@ const possesive = () => {
   document.querySelector("#centered-title").textContent = "Possesive Pronoun + Сам Cases";
 
   if (fetchList.includes("poss") == false) {
-    fetch("./wordbank/possessives+sam.json")
+    fetch("/wordbank/possessives+sam.json")
       .then((response) => response.json())
       .then((data) => {
         jsonPossess = data;
@@ -579,7 +579,7 @@ const demonstrative = () => {
   document.querySelector("#centered-title").textContent = "Demonstrative + Весь Cases";
 
   if (fetchList.includes("demo") == false) {
-    fetch("./wordbank/demonstratives+ves.json")
+    fetch("/wordbank/demonstratives+ves.json")
       .then((response) => response.json())
       .then((data) => {
         jsonDemonst = data;
@@ -604,7 +604,7 @@ const questionword = () => {
   document.querySelector("#centered-title").textContent = "Question Word Cases";
 
   if (fetchList.includes("ques") == false) {
-    fetch("./wordbank/questionwords.json")
+    fetch("/wordbank/questionwords.json")
       .then((response) => response.json())
       .then((data) => {
         jsonQuestion = data;
@@ -640,7 +640,7 @@ const comparative = () => {
   document.querySelector("#centered-title").textContent = "Comparative Creation";
 
   if (fetchList.includes("comp") == false) {
-    fetch("./wordbank/comparatives.json")
+    fetch("/wordbank/comparatives.json")
       .then((response) => response.json())
       .then((data) => {
         jsonCompare = data;
