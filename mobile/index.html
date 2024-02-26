@@ -20,37 +20,44 @@
 </head>
 
 <style>
-body {
-	/* Putting this line in main.css breaks bootstrap color variabless */
-	background-color: rgb(46, 56, 66);
-	overflow: hidden;
-}
+	/* Putting this line in main.css breaks bootstrap color variables */
+body { background-color: rgb(46, 56, 66); }
 
 #centered-title {
 	padding-top: 7vh;
 	font-size: 32px;
 }
 
-#question { font-size: 30px; }
-
-#result { font-size: 30px; }
+#question, #result { font-size: 30px; }
 </style>
 
 <body>
 
 	<script>
 	// Don't let mobile keyboard drag down the page after typing answer
-	document.addEventListener('focusout', function(e) { window.scrollTo(0, 0) });
+	document.addEventListener('focusout', function(e) {
+		// Only for portrait mode
+		if (window.orientation != "90" && window.orientation != "-90") {
+			window.scrollTo(0, 0);
+		} else {
+			setTimeout(() => {
+				window.scrollTo(0, document.body.scrollHeight);
+			}, 1); // Need some time or else it won't fire
+		}
+	});
 
 	// When mobile keyboard pops up, continue to show the question and don't pull page down
 	document.addEventListener('focusin', function(e) {
-		setTimeout(() => {
-			const question = document.getElementById("question");
-			question.scrollIntoView({
-				behavior: 'smooth',
-				block: 'start'
-			});
-		}, 75);
+		// Only for portrait mode
+		if (window.orientation != "90" && window.orientation != "-90") {
+			setTimeout(() => {
+				const question = document.getElementById("question");
+				question.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				});
+			}, 75); // Sweet spot timing
+		}
 	});
 	</script>
 
@@ -117,7 +124,7 @@ body {
 	<div class="d-flex flex-column justify-content-center align-items-center" style="overflow: hidden;">
 		<div class="row">
 			<!-- Page loads w/ verbs first-->
-			<h1 class="col" id="centered-title">Verb Conjugations</h1>
+			<h1 class="col" id="centered-title"><b>Verb Conjugations</b></h1>
 		</div>
 		<div style="margin-top: 6vh; margin-bottom: 6vh;" class="row">
 			<div class="col" id="question"></div>
@@ -126,7 +133,7 @@ body {
 			<input class="form-control-lg" id="inputAnswer" type="text" placeholder="Answer" spellcheck="false">
 			<button type="button" id="check-button" class="btn btn-outline-info" onclick="checkAnswer()">Check</button>
 		</div>
-		<div class="row">
+		<div style="margin-bottom: 2vh;" class="row">
 			<div class="col" id="result">Result: </div>
 		</div>
 	</div>
