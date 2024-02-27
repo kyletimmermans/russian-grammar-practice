@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+	<title>Ошибка 404</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+	<meta name="description" content="Practice Russian grammar with exercises!">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#dc2f44">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<style>
+body { background-color: rgb(46, 56, 66); }
+
+#centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 7vw;
+}
+</style>
+
+<body>
+<a id="centered" href="/">
+	<span id="0">О</span><span id="1">ш</span><span id="2">и</span><span id="3">б</span><span id="4">к</span><span id="5">а</span><span id="6"> 4</span><span id="7">0</span><span id="8">4</span><span id="9">!</span>
+</a>
+
+<script>
+// Queue each up, every letter wait more than the last (i * 500)
+// Wait for each letter before self to finish
+// "Each letter come out at different times but last the same amount for animation"
+// "Start at the same time but with staggered delays"
+for (let i = 0; i < 10; i++) {
+	setTimeout(() => {
+		document.getElementById(i).style.color = 'red';
+		setTimeout(() => {
+			document.getElementById(i).style.color = 'white';
+		}, 300);
+	}, i * 300);
+}
+
+// Keep running it
+setInterval(() => {
+	for (let i = 0; i < 10; i++) {
+		setTimeout(() => {
+			document.getElementById(i).style.color = 'red';
+			setTimeout(() => {
+				document.getElementById(i).style.color = 'white';
+			}, 300);
+		}, i * 300);
+	}
+}, 3000);  // Waits for 1st run above to finish
+</script>
+</body>
+
+</html>
