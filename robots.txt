@@ -22,11 +22,14 @@
 User-agent: *
 Allow: /$
 Disallow: /favicon/
+Disallow: /media/
 Disallow: /mobile/
 Disallow: /resources/
 Disallow: /wordbank/
+Disallow: /.gitignore
 Disallow: /CNAME
 Disallow: /LICENSE
+Disallow: /README.md
 Disallow: /app.js
 Disallow: /apple-touch-icon.png
 Disallow: /browserconfig.xml
