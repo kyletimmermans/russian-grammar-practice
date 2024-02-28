@@ -139,6 +139,7 @@ const randomCase = (animate, plural) => {
 
 const randomVerb = (data) => {
   let randomVerb = data.verb[getRandomInt(0, data.verb.length - 1)];
+
   // 60% present, 30% past, 10% imperative
   let conjType = getRandomString([
     "present",
@@ -152,6 +153,7 @@ const randomVerb = (data) => {
     "past",
     "imperative",
   ]);
+
   let proNoun;
 
   if (conjType == "imperative") {
@@ -160,6 +162,12 @@ const randomVerb = (data) => {
     proNoun = getRandomString(["m", "f", "n", "p"]);
   } else {
     proNoun = getRandomString(["ya", "ty", "on", "my", "vy", "oni"]);
+
+    // There is rarely present tense use of быть
+    // Use its future tense instead when present chosen
+    if (randomVerb.name == "быть") {
+      conjType = "future";
+    }
   }
 
   let cyrillicPronoun;
@@ -348,9 +356,6 @@ const verb = () => {
         fetchList.push("verb");
         // Possibly no data like present tense быть
         let q = randomVerb(jsonVerb);
-        while (q[3] == "-") {
-          q = randomVerb(jsonVerb);
-        }
         document.getElementById("question").innerHTML = q[2]+" ____ <b>"+q[0]
                                                         +"</b> (\""+q[4]+"\") ("
                                                         +q[1]+")";
@@ -360,9 +365,6 @@ const verb = () => {
     // If already fetched
     // Possibly no data like present tense быть
     let q = randomVerb(jsonVerb);
-    while (q[3] == "-") {
-      q = randomVerb(jsonVerb);
-    }
     document.getElementById("question").innerHTML = q[2]+" ____ <b>"+q[0]
                                                     +"</b> (\""+q[4]+"\") ("
                                                     +q[1]+")";
