@@ -29,6 +29,12 @@ body { background-color: rgb(46, 56, 66); }
 }
 
 #question, #result { font-size: 30px; }
+
+/* Prevent mobile :hover active state leftovers */
+.btn-outline-info {
+	--bs-btn-hover-bg: transparent;
+	--bs-btn-hover-color: #0dcaf0;
+}
 </style>
 
 <body>
@@ -45,6 +51,7 @@ body { background-color: rgb(46, 56, 66); }
 			}, 1); // Need some time or else it won't fire
 		}
 	});
+
 
 	// When mobile keyboard pops up, continue to show the question and don't pull page down
 	document.addEventListener('focusin', function(e) {
@@ -94,7 +101,7 @@ body { background-color: rgb(46, 56, 66); }
 			<div class="modal-body">
 				<div>Made with 💚 by <a href="https://www.kyles.world/" target="_blank" rel="noopener noreferrer">Kyle</a></div>
 				<div>&nbsp;</div>
-				<p>Found a vocab / grammar issue or technical bug? Have an improvement in mind? Let me know on <a href="https://www.github.com/rus-grammar-practice/rus-grammar-practice.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>!</p>
+				<div>Found a vocab / grammar issue or technical bug? Have an improvement in mind? Let me know on <a href="https://www.github.com/rus-grammar-practice/rus-grammar-practice.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>!</div>
 				<div>&nbsp;</div>
 				<i>Russian Learning Resources:</i>
 				<ul>

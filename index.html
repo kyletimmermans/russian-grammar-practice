@@ -26,6 +26,17 @@ body { background-color: rgb(46, 56, 66); }
 #centered-title { font-size: 2.92vw; }
 
 #question, #result { font-size: 2.64vw; }
+
+/* Big screens - Increase size of widgets, buttons, and modal */
+@media screen and (min-width: 1600px) and (min-height: 900px) {
+	#dropdownMenu2, #inputAnswer, #check-button { font-size: 1.10vw; }
+	#dropdownMenu2 .dropdown-menu { font-size: 1.10vw }
+	.btn-primary { font-size: 1.10vw; }
+	.modal-title { font-size: 1.09vw; }
+	.modal-body { font-size: 1.02vw; }
+	.btn-success { font-size: 1.00vw; }
+	.modal { --bs-modal-width: 27.34vw; }
+}
 </style>
 
 <body>
@@ -63,7 +74,7 @@ body { background-color: rgb(46, 56, 66); }
 			<div class="modal-body">
 				<div>Made with 💚 by <a href="https://www.kyles.world/" target="_blank" rel="noopener noreferrer">Kyle</a></div>
 				<div>&nbsp;</div>
-				<p>Found a vocab / grammar issue or technical bug? Have an improvement in mind? Let me know on <a href="https://www.github.com/rus-grammar-practice/rus-grammar-practice.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>!</p>
+				<div>Found a vocab / grammar issue or technical bug? Have an improvement in mind? Let me know on <a href="https://www.github.com/rus-grammar-practice/rus-grammar-practice.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>!</div>
 				<div>&nbsp;</div>
 				<i>Russian Learning Resources:</i>
 				<ul>

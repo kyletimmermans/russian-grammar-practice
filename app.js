@@ -363,8 +363,8 @@ const verb = () => {
     while (q[3] == "-") {
       q = randomVerb(jsonVerb);
     }
-    document.getElementById("question").innerHTML = q[2]+" ____ (<b>"+q[0]
-                                                    +"</b> - \""+q[4]+"\") ("
+    document.getElementById("question").innerHTML = q[2]+" ____ <b>"+q[0]
+                                                    +"</b> (\""+q[4]+"\") ("
                                                     +q[1]+")";
     correctAnswer = q[3];
   }
@@ -491,7 +491,7 @@ const plurAdj = () => {
         fetchList.push("adj");
         let q = randomAdjective(jsonAdj, "p");
         document.getElementById("question").innerHTML = "Plural "+q[2]+" <b>"
-                                                        +q[0]+"</b>"+ " (\""
+                                                        +q[0]+"</b>"+" (\""
                                                         +q[1]+"\")";
         correctAnswer = q[4];
       });
@@ -518,7 +518,7 @@ const pronoun = () => {
         fetchList.push("pro");
         let q = randomPronoun(jsonPronoun);
         if (q[2] === undefined || q[2] == 0) {
-          document.getElementById("question").innerHTML = q[1]+"<b> "+q[0]+"</b>";
+          document.getElementById("question").innerHTML = q[1]+" <b>"+q[0]+"</b>";
           // No "(н)"
           if (q[3].substring(0, 3) == "(н)") {
             correctAnswer = q[3].slice(3);
@@ -625,8 +625,7 @@ const questionword = () => {
   } else {
     let q = randomQuestionWord(jsonQuestion);
     if (q.length == 3) {
-      document.getElementById("question").innerHTML = q[1]+" <b>"
-                                                      +q[0]+"</b>";
+      document.getElementById("question").innerHTML = q[1]+" <b>"+q[0]+"</b>";
       correctAnswer = q[2];
     } else {
       document.getElementById("question").innerHTML = q[1]+" "+q[2]
@@ -658,7 +657,7 @@ const comparative = () => {
     let q = randomComparative(jsonCompare);
     document.getElementById("question").innerHTML = "<b>"+q[0]+"</b> (\""
                                                     +q[1]+"\") → ____ (\""
-                                                    +q[2]+"\")"
+                                                    +q[2]+"\")";
     correctAnswer = q[3];
   }
 };
