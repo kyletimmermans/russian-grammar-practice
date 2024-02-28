@@ -354,16 +354,14 @@ const verb = () => {
       .catch((error) => console.error("Error loading JSON:", error))
       .finally(() => {
         fetchList.push("verb");
-        // Possibly no data like present tense быть
+
         let q = randomVerb(jsonVerb);
         document.getElementById("question").innerHTML = q[2]+" ____ <b>"+q[0]
                                                         +"</b> (\""+q[4]+"\") ("
                                                         +q[1]+")";
         correctAnswer = q[3];
       });
-  } else {
-    // If already fetched
-    // Possibly no data like present tense быть
+  } else {  // If already fetched
     let q = randomVerb(jsonVerb);
     document.getElementById("question").innerHTML = q[2]+" ____ <b>"+q[0]
                                                     +"</b> (\""+q[4]+"\") ("
