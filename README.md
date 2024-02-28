@@ -3,9 +3,9 @@
 [![kyletimmermans Twitter](http://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Follow)](https://twitter.com/kyletimmermans)
 
 
-# <div align="center"><a>russiangrammarpractice.com</a></div>
+# <div align="center"><a href='https://www.russiangrammarpractice.com'>russiangrammarpractice.com</a></div>
 
-Practice Russian grammar with exercises!
+### <div align="center">Practice Russian grammar with exercises!</div>
 
 
 ### Desktop View
