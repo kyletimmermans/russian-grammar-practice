@@ -27,7 +27,6 @@ Disallow: /mobile/
 Disallow: /resources/
 Disallow: /wordbank/
 Disallow: /.gitignore
-Disallow: /CNAME
 Disallow: /LICENSE
 Disallow: /README.md
 Disallow: /app.js

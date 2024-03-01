@@ -1,5 +1,5 @@
 ![Bootstrap 5](https://img.shields.io/badge/Bootstrap-5-8B11FA.svg)
-![Last Updated](https://img.shields.io/github/last-commit/rus-grammar-practice/rus-grammar-practice.github.io?color=success)
+![Last Updated](https://img.shields.io/github/last-commit/kyletimmermans/russian-grammar-practice?color=success)
 [![kyletimmermans Twitter](http://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Follow)](https://twitter.com/kyletimmermans)
 
 
@@ -10,47 +10,47 @@
 
 ### Desktop View
 <p align="center">
-  <img src="https://github.com/rus-grammar-practice/rus-grammar-practice.github.io/blob/master/media/desktop_view.png?raw=true" alt="Desktop View"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/desktop_view.png?raw=true" alt="Desktop View"/>
 </p>
 
 </br>
 
 ### Mobile Portrait View
 <p align="center">
-  <img src="https://github.com/rus-grammar-practice/rus-grammar-practice.github.io/blob/master/media/mobile_portrait.png?raw=true" alt="Mobile Portrait View"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/mobile_portrait.png?raw=true" alt="Mobile Portrait View"/>
 </p>
 
 </br>
 
 ### Mobile Landscape View
 <p align="center">
-  <img src="https://github.com/rus-grammar-practice/rus-grammar-practice.github.io/blob/master/media/mobile_landscape.png?raw=true" alt="Mobile Landscape View"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/mobile_landscape.png?raw=true" alt="Mobile Landscape View"/>
 </p>
 
 </br>
 
 ### Exercise Types
 <p align="center">
-  <img src="https://github.com/rus-grammar-practice/rus-grammar-practice.github.io/blob/master/media/exercise_types.png?raw=true" alt="Exercise Types"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/exercise_types.png?raw=true" alt="Exercise Types"/>
 </p>
 
 </br>
 
 ### About Modal
 <p align="center">
-  <img src="https://github.com/rus-grammar-practice/rus-grammar-practice.github.io/blob/master/media/about_modal.png?raw=true" alt="About Modal"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/about_modal.png?raw=true" alt="About Modal"/>
 </p>
 
 </br>
 
 ### Correct Answer
 <p align="center">
-  <img src="https://github.com/rus-grammar-practice/rus-grammar-practice.github.io/blob/master/media/correct_answer.png?raw=true" alt="Exercise Types"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/correct_answer.png?raw=true" alt="Exercise Types"/>
 </p>
 
 </br>
 
 ### Incorrect Answer
 <p align="center">
-  <img src="https://github.com/rus-grammar-practice/rus-grammar-practice.github.io/blob/master/media/incorrect_answer.png?raw=true" alt="About Modal"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/incorrect_answer.png?raw=true" alt="About Modal"/>
 </p>
