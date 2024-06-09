@@ -2934,6 +2934,56 @@
       }
     },
     {
+      "name": "одеть",
+      "translation": "to get dressed",
+      "form": "perfective",
+      "conjugations": {
+        "present": {
+          "ya": "одену",
+          "ty": "оденешь",
+          "on": "оденет",
+          "my": "оденем",
+          "vy": "оденете",
+          "oni": "оденут"
+        },
+        "past": {
+          "m": "одел",
+          "f": "одела",
+          "n": "одело",
+          "p": "одели"
+        },
+        "imperative": {
+          "ty": "Одень",
+          "vy": "Оденьте"
+        }
+      }
+    },
+    {
+      "name": "отдохнуть",
+      "translation": "to relax",
+      "form": "perfective",
+      "conjugations": {
+        "present": {
+          "ya": "отдохну",
+          "ty": "отдохнёшь",
+          "on": "отдохнёт",
+          "my": "отдохнём",
+          "vy": "отдохнёте",
+          "oni": "отдохнут"
+        },
+        "past": {
+          "m": "отдохнул",
+          "f": "отдохнула",
+          "n": "отдохнуло",
+          "p": "отдохнули"
+        },
+        "imperative": {
+          "ty": "Отдохни",
+          "vy": "Отдохните"
+        }
+      }
+    },
+    {
       "name": "войти",
       "translation": "to enter / to come in",
       "form": "perfective",
