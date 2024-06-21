@@ -21,9 +21,18 @@
 	background-color: #9ceafa !important;
 }
 
+/* Prevent blank space in question from showing breaks */
+#nobreaks {
+	letter-spacing: -1px;
+	display: inline;
+}
+
 /* Center input box placeholder */
 ::placeholder { text-align: center; }
 ::-webkit-input-placeholder { text-align: center; }
 :-moz-placeholder { text-align: center; }
 ::-moz-placeholder { text-align: center; }
 :-ms-input-placeholder { text-align: center; }
+
+::selection { background: rgba(13, 202, 240, 0.5) !important; }
+::-moz-selection { background: rgba(13, 202, 240, 0.5) !important; }

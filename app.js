@@ -356,14 +356,14 @@ const verb = () => {
         fetchList.push("verb");
 
         let q = randomVerb(jsonVerb);
-        document.getElementById("question").innerHTML = q[2]+" ____ <b>"+q[0]
+        document.getElementById("question").innerHTML = q[2]+" <div id='nobreaks'>____</div> <b>"+q[0]
                                                         +"</b> (\""+q[4]+"\") ("
                                                         +q[1]+")";
         correctAnswer = q[3];
       });
   } else {  // If already fetched
     let q = randomVerb(jsonVerb);
-    document.getElementById("question").innerHTML = q[2]+" ____ <b>"+q[0]
+    document.getElementById("question").innerHTML = q[2]+" <div id='nobreaks'>____</div> <b>"+q[0]
                                                     +"</b> (\""+q[4]+"\") ("
                                                     +q[1]+")";
     correctAnswer = q[3];
@@ -649,14 +649,14 @@ const comparative = () => {
         fetchList.push("comp");
         let q = randomComparative(jsonCompare);
         document.getElementById("question").innerHTML = "<b>"+q[0]+"</b> (\""
-                                                        +q[1]+"\") → ____ (\""
+                                                        +q[1]+"\") → <div id='nobreaks'>____</div> (\""
                                                         +q[2]+"\")";
         correctAnswer = q[3];
       });
   } else {
     let q = randomComparative(jsonCompare);
     document.getElementById("question").innerHTML = "<b>"+q[0]+"</b> (\""
-                                                    +q[1]+"\") → ____ (\""
+                                                    +q[1]+"\") → <div id='nobreaks'>____</div> (\""
                                                     +q[2]+"\")";
     correctAnswer = q[3];
   }
