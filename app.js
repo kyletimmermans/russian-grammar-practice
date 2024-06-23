@@ -5,19 +5,23 @@ var jsonCompare,
   correctAnswer,
   fetchList = [];
 
+
 // Start with verbs on site load
 document.addEventListener("DOMContentLoaded", (event) => {
   verb();
 });
 
+
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 
 function getRandomString(arr) {
   const randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex];
 }
+
 
 const randomGender = (plural) => {
   if (plural == true) {
@@ -58,6 +62,7 @@ const randomGender = (plural) => {
     return [gender, finalGender];
   }
 };
+
 
 const randomCase = (animate, plural) => {
   var gramcase;
@@ -137,6 +142,7 @@ const randomCase = (animate, plural) => {
   }
 };
 
+
 const randomVerb = (data) => {
   let randomVerb = data.verb[getRandomInt(0, data.verb.length - 1)];
 
@@ -214,6 +220,7 @@ const randomVerb = (data) => {
   ];
 };
 
+
 const randomNoun = (data, amount) => {
   let randomNoun = data.noun[getRandomInt(0, data.noun.length - 1)];
   let gramcase = randomCase(false, amount);
@@ -249,6 +256,7 @@ const randomAdjective = (data, amount) => {
     gender[1]
   ];
 };
+
 
 const randomPronoun = (data) => {
   let randomPronoun = data.pronoun[getRandomInt(0, data.pronoun.length - 1)];
@@ -299,6 +307,7 @@ const randomPossDemo = (data, word) => {
   }
 };
 
+
 const randomQuestionWord = (data) => {
   let randomQuestion =
     data.questionword[getRandomInt(0, data.questionword.length - 1)];
@@ -327,6 +336,7 @@ const randomQuestionWord = (data) => {
     ];
   }
 };
+
 
 const randomComparative = (data) => {
   let randomComp =
@@ -370,6 +380,7 @@ const verb = () => {
   }
 };
 
+
 const singNoun = () => {
   document.querySelector("#centered-title").innerHTML = "Singular Noun Cases";
 
@@ -410,6 +421,7 @@ const singNoun = () => {
   }
 };
 
+
 const plurNoun = () => {
   document.querySelector("#centered-title").textContent = "Plural Noun Cases";
 
@@ -449,6 +461,7 @@ const plurNoun = () => {
   }
 };
 
+
 const singAdj = () => {
   document.querySelector("#centered-title").textContent = "Singular Adjective Cases";
 
@@ -477,6 +490,7 @@ const singAdj = () => {
   }
 };
 
+
 const plurAdj = () => {
   document.querySelector("#centered-title").textContent = "Plural Adjective Cases";
 
@@ -503,6 +517,7 @@ const plurAdj = () => {
     correctAnswer = q[4];
   }
 };
+
 
 const pronoun = () => {
   document.querySelector("#centered-title").textContent = "Pronoun Cases";
@@ -550,6 +565,7 @@ const pronoun = () => {
   }
 };
 
+
 const possesive = () => {
   document.querySelector("#centered-title").textContent = "Possesive Pronoun + Сам Cases";
 
@@ -575,6 +591,7 @@ const possesive = () => {
   }
 };
 
+
 const demonstrative = () => {
   document.querySelector("#centered-title").textContent = "Demonstrative + Весь Cases";
 
@@ -599,6 +616,7 @@ const demonstrative = () => {
     correctAnswer = q[3];
   }
 };
+
 
 const questionword = () => {
   document.querySelector("#centered-title").textContent = "Question Word Cases";
@@ -635,6 +653,7 @@ const questionword = () => {
   }
 };
 
+
 const comparative = () => {
   document.querySelector("#centered-title").textContent = "Comparative Creation";
 
@@ -663,13 +682,49 @@ const comparative = () => {
 };
 
 
+const checkAnswer = () => {
+  let answer = document.getElementById("inputAnswer").value.toLowerCase();
+  if (answer.replace(/\s/g, "") == correctAnswer.toLowerCase()) {
+    document.getElementById("result").innerHTML =
+      "Result: <span style='color: green;'>Correct!</span>";
+  } else {
+    document.getElementById("result").innerHTML =
+      "Result: <span style='color: red;'>Incorrect - " +
+      correctAnswer +
+      "</span>";
+  }
+
+  // Disable button to prevent issues
+  var checkButton = document.getElementById("check-button");
+  checkButton.classList.remove('btn-outline-info');
+  checkButton.classList.add('btn-outline-warning');
+  checkButton.innerText = "Skip";
+  checkButton.onclick = resetForm;
+
+  // Wait 5 seconds for user to read corrected answer, then reset
+  setTimeout(() => {
+    resetForm();
+  }, 5000);
+};
+
+
+// Onclick skip button, on change exercise, or 5s after clicking check-answer
 const resetForm = () => {
+  var id = window.setTimeout(function() {}, 0);
+  while (id--) {
+      window.clearTimeout(id);
+  }
+
   // Reset Result and input answer field
   document.getElementById("result").innerHTML = "Result: ";
   document.getElementById("inputAnswer").value = "";
 
-  // Re-enable button
-  document.getElementById("check-button").disabled = false;
+  // Turn skip button back into check-button
+  var checkButton = document.getElementById("check-button");
+  checkButton.innerText = "Check";
+  checkButton.classList.remove('btn-outline-warning');
+  checkButton.classList.add('btn-outline-info');
+  checkButton.onclick = checkAnswer;
 
   // Find out which exercise we need to get a new question from
   // By looking at the current title that we set
@@ -711,36 +766,3 @@ const resetForm = () => {
       console.error("Something went wrong in checkAnswer()!");
   }
 };
-
-
-const checkAnswer = () => {
-  let answer = document.getElementById("inputAnswer").value.toLowerCase();
-  if (answer.replace(/\s/g, "") == correctAnswer.toLowerCase()) {
-    document.getElementById("result").innerHTML =
-      "Result: <span style='color: green;'>Correct!</span>";
-  } else {
-    document.getElementById("result").innerHTML =
-      "Result: <span style='color: red;'>Incorrect - " +
-      correctAnswer +
-      "</span>";
-  }
-
-  // Disable button to prevent issues
-  document.getElementById("check-button").disabled = true;
-
-  // Wait 5 seconds for user to read corrected answer, then reset
-  setTimeout(() => {
-    restForm();
-  }, 5000);
-};
-
-
-// Prevent timers from going off after exercise switch
-function clearTimers() {
-  var id = window.setTimeout(function() {}, 0);
-  while (id--) {
-      window.clearTimeout(id);
-  }
-
-  resetForm();
-}
