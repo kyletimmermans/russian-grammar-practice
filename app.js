@@ -662,6 +662,57 @@ const comparative = () => {
   }
 };
 
+
+const resetForm = () => {
+  // Reset Result and input answer field
+  document.getElementById("result").innerHTML = "Result: ";
+  document.getElementById("inputAnswer").value = "";
+
+  // Re-enable button
+  document.getElementById("check-button").disabled = false;
+
+  // Find out which exercise we need to get a new question from
+  // By looking at the current title that we set
+  currExerciseType = document.querySelector("#centered-title").textContent;
+
+  switch (currExerciseType) {
+    case "Verb Conjugations":
+      verb();
+      break;
+    case "Singular Noun Cases":
+      singNoun();
+      break;
+    case "Plural Noun Cases":
+      plurNoun();
+      break;
+    case "Singular Adjective Cases":
+      singAdj();
+      break;
+    case "Plural Adjective Cases":
+      plurAdj();
+      break;
+    case "Pronoun Cases":
+      pronoun();
+      break;
+    case "Possesive Pronoun + Сам Cases":
+      possesive();
+      break;
+    case "Demonstrative + Весь Cases":
+      demonstrative();
+      break;
+    case "Question Word Cases":
+      questionword();
+      break;
+    case "Comparative Creation":
+      comparative();
+      break;
+    default:
+      verb();
+      console.error("Something went wrong in checkAnswer()!");
+  }
+};
+
+
 const checkAnswer = () => {
   let answer = document.getElementById("inputAnswer").value.toLowerCase();
   if (answer.replace(/\s/g, "") == correctAnswer.toLowerCase()) {
@@ -675,56 +726,21 @@ const checkAnswer = () => {
   }
 
   // Disable button to prevent issues
-  var answerButton = document.getElementById("check-button");
-  answerButton.disabled = true;
+  document.getElementById("check-button").disabled = true;
 
   // Wait 5 seconds for user to read corrected answer, then reset
   setTimeout(() => {
-    // Reset Result and input answer field
-    document.getElementById("result").innerHTML = "Result: ";
-    document.getElementById("inputAnswer").value = "";
-
-    // Re-enable button
-    answerButton.disabled = false;
-
-    // Find out which exercise we need to get a new question from
-    // By looking at the current title that we set
-    currExerciseType = document.querySelector("#centered-title").textContent;
-
-    switch (currExerciseType) {
-      case "Verb Conjugations":
-        verb();
-        break;
-      case "Singular Noun Cases":
-        singNoun();
-        break;
-      case "Plural Noun Cases":
-        plurNoun();
-        break;
-      case "Singular Adjective Cases":
-        singAdj();
-        break;
-      case "Plural Adjective Cases":
-        plurAdj();
-        break;
-      case "Pronoun Cases":
-        pronoun();
-        break;
-      case "Possesive Pronoun + Сам Cases":
-        possesive();
-        break;
-      case "Demonstrative + Весь Cases":
-        demonstrative();
-        break;
-      case "Question Word Cases":
-        questionword();
-        break;
-      case "Comparative Creation":
-        comparative();
-        break;
-      default:
-        verb();
-        console.error("Something went wrong in checkAnswer()!");
-    }
+    restForm();
   }, 5000);
 };
+
+
+// Prevent timers from going off after exercise switch
+function clearTimers() {
+  var id = window.setTimeout(function() {}, 0);
+  while (id--) {
+      window.clearTimeout(id);
+  }
+
+  resetForm();
+}
