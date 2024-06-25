@@ -27,12 +27,14 @@ Disallow: /mobile/
 Disallow: /resources/
 Disallow: /wordbank/
 Disallow: /.gitignore
+Disallow: /404.html
 Disallow: /LICENSE
 Disallow: /README.md
 Disallow: /app.js
 Disallow: /apple-touch-icon.png
 Disallow: /browserconfig.xml
 Disallow: /favicon.ico
+Disallow: /humans.txt
 Disallow: /main.css
 Disallow: /site.webmanifest
 
