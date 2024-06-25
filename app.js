@@ -699,17 +699,17 @@ const checkAnswer = () => {
   checkButton.classList.remove('btn-outline-info');
   checkButton.classList.add('btn-outline-warning');
   checkButton.innerText = "Skip";
-  checkButton.onclick = resetForm;
+  checkButton.onclick = function() { resetForm(true); }
 
   // Wait 5 seconds for user to read corrected answer, then reset
   setTimeout(() => {
-    resetForm();
+    resetForm(true);
   }, 5000);
 };
 
 
 // Onclick skip button, on change exercise, or 5s after clicking check-answer
-const resetForm = () => {
+const resetForm = (newQuestion) => {
   var id = window.setTimeout(function() {}, 0);
   while (id--) {
       window.clearTimeout(id);
@@ -726,43 +726,45 @@ const resetForm = () => {
   checkButton.classList.add('btn-outline-info');
   checkButton.onclick = checkAnswer;
 
-  // Find out which exercise we need to get a new question from
-  // By looking at the current title that we set
-  currExerciseType = document.querySelector("#centered-title").textContent;
+  if (newQuestion == true) {
+    // Find out which exercise we need to get a new question from
+    // By looking at the current title that we set
+    currExerciseType = document.querySelector("#centered-title").textContent;
 
-  switch (currExerciseType) {
-    case "Verb Conjugations":
-      verb();
-      break;
-    case "Singular Noun Cases":
-      singNoun();
-      break;
-    case "Plural Noun Cases":
-      plurNoun();
-      break;
-    case "Singular Adjective Cases":
-      singAdj();
-      break;
-    case "Plural Adjective Cases":
-      plurAdj();
-      break;
-    case "Pronoun Cases":
-      pronoun();
-      break;
-    case "Possesive Pronoun + Сам Cases":
-      possesive();
-      break;
-    case "Demonstrative + Весь Cases":
-      demonstrative();
-      break;
-    case "Question Word Cases":
-      questionword();
-      break;
-    case "Comparative Creation":
-      comparative();
-      break;
-    default:
-      verb();
-      console.error("Something went wrong in checkAnswer()!");
+    switch (currExerciseType) {
+      case "Verb Conjugations":
+        verb();
+        break;
+      case "Singular Noun Cases":
+        singNoun();
+        break;
+      case "Plural Noun Cases":
+        plurNoun();
+        break;
+      case "Singular Adjective Cases":
+        singAdj();
+        break;
+      case "Plural Adjective Cases":
+        plurAdj();
+        break;
+      case "Pronoun Cases":
+        pronoun();
+        break;
+      case "Possesive Pronoun + Сам Cases":
+        possesive();
+        break;
+      case "Demonstrative + Весь Cases":
+        demonstrative();
+        break;
+      case "Question Word Cases":
+        questionword();
+        break;
+      case "Comparative Creation":
+        comparative();
+        break;
+      default:
+        verb();
+        console.error("Something went wrong in resetForm()!");
+    }
   }
 };
