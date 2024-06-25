@@ -45,12 +45,12 @@
 
 ### Correct Answer
 <p align="center">
-  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/correct_answer.png?raw=true" alt="Exercise Types"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/correct-answer.png?raw=true" alt="Exercise Types"/>
 </p>
 
 </br>
 
 ### Incorrect Answer
 <p align="center">
-  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/incorrect_answer.png?raw=true" alt="About Modal"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/incorrect-answer.png?raw=true" alt="About Modal"/>
 </p>
