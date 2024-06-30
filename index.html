@@ -122,6 +122,19 @@ body {
 			<div class="col" id="result">Result: </div>
 		</div>
 	</div>
+
+<script>
+// On 'Enter' when in search bar, do check answer or skip
+var input = document.getElementById("inputAnswer");
+var checkButton = document.getElementById("check-button");
+
+input.addEventListener("keypress", function(event) {
+	if (event.key === "Enter") {
+		event.preventDefault();
+		checkButton.click();
+	}
+});
+</script>
 </body>
 
 </html>
