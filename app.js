@@ -382,7 +382,7 @@ const verb = () => {
 
 
 const singNoun = () => {
-  document.querySelector("#centered-title").innerHTML = "Singular Noun Cases";
+  document.querySelector("#centered-title").textContent = "Singular Noun Cases";
 
   if (fetchList.includes("noun") == false) {
     fetch("/wordbank/nouns.json")
@@ -716,7 +716,7 @@ const resetForm = (newQuestion) => {
   }
 
   // Reset Result and input answer field
-  document.getElementById("result").innerHTML = "Result: ";
+  document.getElementById("result").textContent = "Result: ";
   document.getElementById("inputAnswer").value = "";
 
   // Turn skip button back into check-button
