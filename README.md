@@ -38,7 +38,7 @@
 
 ### About Modal
 <p align="center">
-  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/about_modal.png?raw=true" alt="About Modal"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/about_modal_v2.png?raw=true" alt="About Modal"/>
 </p>
 
 </br>
