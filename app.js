@@ -374,7 +374,6 @@ const verb = () => {
       .finally(() => {
         if (!isError) {
           fetchList.push("verb");
-          isError = false;
           document.getElementsByClassName("alert-holder")[0].style.display = "none";
           let q = randomVerb(jsonVerb);
           document.getElementById("question").innerHTML = q[2]+" <div id='nobreaks'>____</div> <b>"+q[0]
@@ -416,7 +415,6 @@ const singNoun = () => {
       .finally(() => {
         if (!isError) {
           fetchList.push("noun");
-          isError = false;
           document.getElementsByClassName("alert-holder")[0].style.display = "none";
           let q = randomNoun(jsonNoun, "s");
           if (q[4] == true) {
@@ -470,7 +468,6 @@ const plurNoun = () => {
       .finally(() => {
         if (!isError) {
           fetchList.push("noun");
-          isError = false;
           document.getElementsByClassName("alert-holder")[0].style.display = "none";
           let q = randomNoun(jsonNoun, "p");
           if (q[4] == true) {
@@ -523,7 +520,6 @@ const singAdj = () => {
       .finally(() => {
         if (!isError) {
           fetchList.push("adj");
-          isError = false;
           document.getElementsByClassName("alert-holder")[0].style.display = "none";
           let q = randomAdjective(jsonAdj, "s");
           document.getElementById("question").innerHTML = "Singular "+q[5]+" "+q[2]
@@ -565,7 +561,6 @@ const plurAdj = () => {
       .finally(() => {
         if (!isError) {
           fetchList.push("adj");
-          isError = false;
           document.getElementsByClassName("alert-holder")[0].style.display = "none";
           let q = randomAdjective(jsonAdj, "p");
           document.getElementById("question").innerHTML = "Plural "+q[2]+" <b>"
@@ -606,7 +601,6 @@ const pronoun = () => {
       .finally(() => {
         if (!isError) {
           fetchList.push("pro");
-          isError = false;
           document.getElementsByClassName("alert-holder")[0].style.display = "none";
           let q = randomPronoun(jsonPronoun);
           if (q[2] === undefined || q[2] == 0) {
@@ -666,7 +660,6 @@ const possesive = () => {
       .finally(() => {
         if (!isError) {
           fetchList.push("poss");
-          isError = false;
           document.getElementsByClassName("alert-holder")[0].style.display = "none";
           let q = randomPossDemo(jsonPossess, "poss");
           document.getElementById("question").innerHTML = q[2]+" "+q[1]
@@ -705,7 +698,6 @@ const demonstrative = () => {
       .finally(() => {
         if (!isError) {
           fetchList.push("demo");
-          isError = false;
           document.getElementsByClassName("alert-holder")[0].style.display = "none";
           let q = randomPossDemo(jsonDemonst, "demo");
           document.getElementById("question").innerHTML = q[2]+" "+q[1]
@@ -744,7 +736,6 @@ const questionWord = () => {
       .finally(() => {
         if (!isError) {
           fetchList.push("ques");
-          isError = false;
           document.getElementsByClassName("alert-holder")[0].style.display = "none";
           let q = randomQuestionWord(jsonQuestion);
           if (q.length == 3) {
@@ -793,7 +784,6 @@ const comparative = () => {
       .finally(() => {
         if (!isError) {
           fetchList.push("comp");
-          isError = false;
           document.getElementsByClassName("alert-holder")[0].style.display = "none";
           let q = randomComparative(jsonCompare);
           document.getElementById("question").innerHTML = "<b>"+q[0]+"</b> (\""
