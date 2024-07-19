@@ -54,3 +54,17 @@
 <p align="center">
   <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/incorrect-answer.png?raw=true" alt="About Modal"/>
 </p>
+
+</br>
+
+### Network Error Handling (Desktop)
+<p align="center">
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/network_error_handling_desktop.png?raw=true" alt="Network Error Handling Desktop"/>
+</p>
+
+</br>
+
+### Network Error Handling (Mobile)
+<p align="center">
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/network_error_handling_mobile.png?raw=true" alt="Network Error Handling Mobile"/>
+</p>

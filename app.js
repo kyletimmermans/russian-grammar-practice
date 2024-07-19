@@ -354,6 +354,7 @@ const randomComparative = (data) => {
 
 const verb = () => {
   document.querySelector("#centered-title").textContent = "Verb Conjugations";
+  var isError = false;
 
   if (fetchList.includes("verb") == false) {
     fetch("/wordbank/verbs.json")
@@ -361,15 +362,26 @@ const verb = () => {
       .then((data) => {
         jsonVerb = data;
       })
-      .catch((error) => console.error("Error loading JSON:", error))
+      .catch((error) => {
+        isError = true;
+        console.error("Fetch error: ", error);
+        document.getElementsByClassName("alert-holder")[0].style.display = "block";
+        document.getElementById("question").textContent = "....";
+        setTimeout(() => {
+          verb();
+        }, 3000);
+      })
       .finally(() => {
-        fetchList.push("verb");
-
-        let q = randomVerb(jsonVerb);
-        document.getElementById("question").innerHTML = q[2]+" <div id='nobreaks'>____</div> <b>"+q[0]
-                                                        +"</b> (\""+q[4]+"\") ("
-                                                        +q[1]+")";
-        correctAnswer = q[3];
+        if (!isError) {
+          fetchList.push("verb");
+          isError = false;
+          document.getElementsByClassName("alert-holder")[0].style.display = "none";
+          let q = randomVerb(jsonVerb);
+          document.getElementById("question").innerHTML = q[2]+" <div id='nobreaks'>____</div> <b>"+q[0]
+                                                          +"</b> (\""+q[4]+"\") ("
+                                                          +q[1]+")";
+          correctAnswer = q[3];
+        }
       });
   } else {  // If already fetched
     let q = randomVerb(jsonVerb);
@@ -383,6 +395,7 @@ const verb = () => {
 
 const singNoun = () => {
   document.querySelector("#centered-title").textContent = "Singular Noun Cases";
+  var isError = false;
 
   if (fetchList.includes("noun") == false) {
     fetch("/wordbank/nouns.json")
@@ -390,21 +403,34 @@ const singNoun = () => {
       .then((data) => {
         jsonNoun = data;
       })
-      .catch((error) => console.error("Error loading JSON:", error))
+      .catch((error) => {
+        isError = true;
+        console.error("Fetch error: ", error);
+        document.getElementsByClassName("alert-holder")[0].style.display = "block";
+        document.getElementById("question").textContent = "....";
+        // Keep trying when it fails
+        setTimeout(() => {
+          singNoun();
+        }, 3000);
+      })
       .finally(() => {
-        fetchList.push("noun");
-        let q = randomNoun(jsonNoun, "s");
-        if (q[4] == true) {
-          // Animate or not
-          document.getElementById("question").innerHTML = "Singular "+q[2]+" <b>"+q[0]
-                                                          +"</b>"+" (\""+q[1]+"\", "
-                                                          +q[3]+", animate)";
-        } else {
-          document.getElementById("question").innerHTML = "Singular " +q[2]+" <b>"+q[0]
-                                                          +"</b>"+" (\""+q[1]+"\", "
-                                                          +q[3]+")";
+        if (!isError) {
+          fetchList.push("noun");
+          isError = false;
+          document.getElementsByClassName("alert-holder")[0].style.display = "none";
+          let q = randomNoun(jsonNoun, "s");
+          if (q[4] == true) {
+            // Animate or not
+            document.getElementById("question").innerHTML = "Singular "+q[2]+" <b>"+q[0]
+                                                            +"</b>"+" (\""+q[1]+"\", "
+                                                            +q[3]+", animate)";
+          } else {
+            document.getElementById("question").innerHTML = "Singular " +q[2]+" <b>"+q[0]
+                                                            +"</b>"+" (\""+q[1]+"\", "
+                                                            +q[3]+")";
+          }
+          correctAnswer = q[5];
         }
-        correctAnswer = q[5];
       });
   } else {
     let q = randomNoun(jsonNoun, "s");
@@ -424,6 +450,7 @@ const singNoun = () => {
 
 const plurNoun = () => {
   document.querySelector("#centered-title").textContent = "Plural Noun Cases";
+  var isError = false;
 
   if (fetchList.includes("noun") == false) {
     fetch("/wordbank/nouns.json")
@@ -431,20 +458,32 @@ const plurNoun = () => {
       .then((data) => {
         jsonNoun = data;
       })
-      .catch((error) => console.error("Error loading JSON:", error))
+      .catch((error) => {
+        isError = true;
+        console.error("Fetch error: ", error);
+        document.getElementsByClassName("alert-holder")[0].style.display = "block";
+        document.getElementById("question").textContent = "....";
+        setTimeout(() => {
+          plurNoun();
+        }, 3000);
+      })
       .finally(() => {
-        fetchList.push("noun");
-        let q = randomNoun(jsonNoun, "p");
-        if (q[4] == true) {
-          document.getElementById("question").innerHTML = "Plural "+q[2]+" <b>"+q[0]
-                                                          +"</b>"+" (\""+q[1]+"\", "
-                                                          +q[3]+", animate)";
-        } else {
-          document.getElementById("question").innerHTML = "Plural "+q[2]+" <b>"+q[0]
-                                                          +"</b>"+" (\""+q[1]+"\", "
-                                                          +q[3]+")";
+        if (!isError) {
+          fetchList.push("noun");
+          isError = false;
+          document.getElementsByClassName("alert-holder")[0].style.display = "none";
+          let q = randomNoun(jsonNoun, "p");
+          if (q[4] == true) {
+            document.getElementById("question").innerHTML = "Plural "+q[2]+" <b>"+q[0]
+                                                            +"</b>"+" (\""+q[1]+"\", "
+                                                            +q[3]+", animate)";
+          } else {
+            document.getElementById("question").innerHTML = "Plural "+q[2]+" <b>"+q[0]
+                                                            +"</b>"+" (\""+q[1]+"\", "
+                                                            +q[3]+")";
+          }
+          correctAnswer = q[5];
         }
-        correctAnswer = q[5];
       });
   } else {
     let q = randomNoun(jsonNoun, "p");
@@ -464,6 +503,7 @@ const plurNoun = () => {
 
 const singAdj = () => {
   document.querySelector("#centered-title").textContent = "Singular Adjective Cases";
+  var isError = false;
 
   if (fetchList.includes("adj") == false) {
     fetch("/wordbank/adjectives.json")
@@ -471,15 +511,27 @@ const singAdj = () => {
       .then((data) => {
         jsonAdj = data;
       })
-      .catch((error) => console.error("Error loading JSON:", error))
+      .catch((error) => {
+        isError = true;
+        console.error("Fetch error: ", error);
+        document.getElementsByClassName("alert-holder")[0].style.display = "block";
+        document.getElementById("question").textContent = "....";
+        setTimeout(() => {
+          singAdj();
+        }, 3000);
+      })
       .finally(() => {
-        fetchList.push("adj");
-        let q = randomAdjective(jsonAdj, "s");
-        document.getElementById("question").innerHTML = "Singular "+q[5]+" "+q[2]
-                                                        +" <b>"+q[0]+"</b>"+" (\""
-                                                        +q[1]+"\")";
+        if (!isError) {
+          fetchList.push("adj");
+          isError = false;
+          document.getElementsByClassName("alert-holder")[0].style.display = "none";
+          let q = randomAdjective(jsonAdj, "s");
+          document.getElementById("question").innerHTML = "Singular "+q[5]+" "+q[2]
+                                                          +" <b>"+q[0]+"</b>"+" (\""
+                                                          +q[1]+"\")";
 
-        correctAnswer = q[4];
+          correctAnswer = q[4];
+        }
       });
   } else {
     let q = randomAdjective(jsonAdj, "s");
@@ -493,6 +545,7 @@ const singAdj = () => {
 
 const plurAdj = () => {
   document.querySelector("#centered-title").textContent = "Plural Adjective Cases";
+  var isError = false;
 
   if (fetchList.includes("adj") == false) {
     fetch("/wordbank/adjectives.json")
@@ -500,14 +553,26 @@ const plurAdj = () => {
       .then((data) => {
         jsonAdj = data;
       })
-      .catch((error) => console.error("Error loading JSON:", error))
+      .catch((error) => {
+        isError = true;
+        console.error("Fetch error: ", error);
+        document.getElementsByClassName("alert-holder")[0].style.display = "block";
+        document.getElementById("question").textContent = "....";
+        setTimeout(() => {
+          plurAdj();
+        }, 3000);
+      })
       .finally(() => {
-        fetchList.push("adj");
-        let q = randomAdjective(jsonAdj, "p");
-        document.getElementById("question").innerHTML = "Plural "+q[2]+" <b>"
-                                                        +q[0]+"</b>"+" (\""
-                                                        +q[1]+"\")";
-        correctAnswer = q[4];
+        if (!isError) {
+          fetchList.push("adj");
+          isError = false;
+          document.getElementsByClassName("alert-holder")[0].style.display = "none";
+          let q = randomAdjective(jsonAdj, "p");
+          document.getElementById("question").innerHTML = "Plural "+q[2]+" <b>"
+                                                          +q[0]+"</b>"+" (\""
+                                                          +q[1]+"\")";
+          correctAnswer = q[4];
+        }
       });
   } else {
     let q = randomAdjective(jsonAdj, "p");
@@ -521,6 +586,7 @@ const plurAdj = () => {
 
 const pronoun = () => {
   document.querySelector("#centered-title").textContent = "Pronoun Cases";
+  var isError = false;
 
   if (fetchList.includes("pro") == false) {
     fetch("/wordbank/pronouns.json")
@@ -528,23 +594,35 @@ const pronoun = () => {
       .then((data) => {
         jsonPronoun = data;
       })
-      .catch((error) => console.error("Error loading JSON:", error))
+      .catch((error) => {
+        isError = true;
+        console.error("Fetch error: ", error);
+        document.getElementsByClassName("alert-holder")[0].style.display = "block";
+        document.getElementById("question").textContent = "....";
+        setTimeout(() => {
+          pronoun();
+        }, 3000);
+      })
       .finally(() => {
-        fetchList.push("pro");
-        let q = randomPronoun(jsonPronoun);
-        if (q[2] === undefined || q[2] == 0) {
-          document.getElementById("question").innerHTML = q[1]+" <b>"+q[0]+"</b>";
-          // No "(н)"
-          if (q[3].substring(0, 3) == "(н)") {
-            correctAnswer = q[3].slice(3);
-          } else {
-            correctAnswer = q[3];
+        if (!isError) {
+          fetchList.push("pro");
+          isError = false;
+          document.getElementsByClassName("alert-holder")[0].style.display = "none";
+          let q = randomPronoun(jsonPronoun);
+          if (q[2] === undefined || q[2] == 0) {
+            document.getElementById("question").innerHTML = q[1]+" <b>"+q[0]+"</b>";
+            // No "(н)"
+            if (q[3].substring(0, 3) == "(н)") {
+              correctAnswer = q[3].slice(3);
+            } else {
+              correctAnswer = q[3];
+            }
+          } else if (q[2] == 1) {
+            document.getElementById("question").innerHTML = q[1]+" <b>"+q[0]+"</b>"
+                                                            +" (After preposition)";
+            // Remove parenthesis from (н)
+            correctAnswer = q[3].replace(/\(|\)/g, "");
           }
-        } else if (q[2] == 1) {
-          document.getElementById("question").innerHTML = q[1]+" <b>"+q[0]+"</b>"
-                                                          +" (After preposition)";
-          // Remove parenthesis from (н)
-          correctAnswer = q[3].replace(/\(|\)/g, "");
         }
       });
   } else {
@@ -568,6 +646,7 @@ const pronoun = () => {
 
 const possesive = () => {
   document.querySelector("#centered-title").textContent = "Possesive Pronoun + Сам Cases";
+  var isError = false;
 
   if (fetchList.includes("poss") == false) {
     fetch("/wordbank/possessives+sam.json")
@@ -575,13 +654,25 @@ const possesive = () => {
       .then((data) => {
         jsonPossess = data;
       })
-      .catch((error) => console.error("Error loading JSON:", error))
+      .catch((error) => {
+        isError = true;
+        console.error("Fetch error: ", error);
+        document.getElementsByClassName("alert-holder")[0].style.display = "block";
+        document.getElementById("question").textContent = "....";
+        setTimeout(() => {
+          possesive();
+        }, 3000);
+      })
       .finally(() => {
-        fetchList.push("poss");
-        let q = randomPossDemo(jsonPossess, "poss");
-        document.getElementById("question").innerHTML = q[2]+" "+q[1]
-                                                        +" <b>"+q[0]+"</b>";
-        correctAnswer = q[3];
+        if (!isError) {
+          fetchList.push("poss");
+          isError = false;
+          document.getElementsByClassName("alert-holder")[0].style.display = "none";
+          let q = randomPossDemo(jsonPossess, "poss");
+          document.getElementById("question").innerHTML = q[2]+" "+q[1]
+                                                          +" <b>"+q[0]+"</b>";
+          correctAnswer = q[3];
+        }
       });
   } else {
     let q = randomPossDemo(jsonPossess, "poss");
@@ -594,6 +685,7 @@ const possesive = () => {
 
 const demonstrative = () => {
   document.querySelector("#centered-title").textContent = "Demonstrative + Весь Cases";
+  var isError = false;
 
   if (fetchList.includes("demo") == false) {
     fetch("/wordbank/demonstratives+ves.json")
@@ -601,13 +693,25 @@ const demonstrative = () => {
       .then((data) => {
         jsonDemonst = data;
       })
-      .catch((error) => console.error("Error loading JSON:", error))
+      .catch((error) => {
+        isError = true;
+        console.error("Fetch error: ", error);
+        document.getElementsByClassName("alert-holder")[0].style.display = "block";
+        document.getElementById("question").textContent = "....";
+        setTimeout(() => {
+          demonstrative();
+        }, 3000);
+      })
       .finally(() => {
-        fetchList.push("demo");
-        let q = randomPossDemo(jsonDemonst, "demo");
-        document.getElementById("question").innerHTML = q[2]+" "+q[1]
-                                                        +" <b>"+q[0]+"</b>";
-        correctAnswer = q[3];
+        if (!isError) {
+          fetchList.push("demo");
+          isError = false;
+          document.getElementsByClassName("alert-holder")[0].style.display = "none";
+          let q = randomPossDemo(jsonDemonst, "demo");
+          document.getElementById("question").innerHTML = q[2]+" "+q[1]
+                                                          +" <b>"+q[0]+"</b>";
+          correctAnswer = q[3];
+        }
       });
   } else {
     let q = randomPossDemo(jsonDemonst, "demo");
@@ -618,8 +722,9 @@ const demonstrative = () => {
 };
 
 
-const questionword = () => {
+const questionWord = () => {
   document.querySelector("#centered-title").textContent = "Question Word Cases";
+  var isError = false;
 
   if (fetchList.includes("ques") == false) {
     fetch("/wordbank/questionwords.json")
@@ -627,17 +732,29 @@ const questionword = () => {
       .then((data) => {
         jsonQuestion = data;
       })
-      .catch((error) => console.error("Error loading JSON:", error))
+      .catch((error) => {
+        isError = true;
+        console.error("Fetch error: ", error);
+        document.getElementsByClassName("alert-holder")[0].style.display = "block";
+        document.getElementById("question").textContent = "....";
+        setTimeout(() => {
+          questionWord();
+        }, 3000);
+      })
       .finally(() => {
-        fetchList.push("ques");
-        let q = randomQuestionWord(jsonQuestion);
-        if (q.length == 3) {
-          document.getElementById("question").innerHTML = q[1]+" <b>"+q[0]+"</b>";
-          correctAnswer = q[2];
-        } else {
-          document.getElementById("question").innerHTML = q[1]+" "+q[2]
-                                                          +" <b>"+q[0]+"</b>";
-          correctAnswer = q[3];
+        if (!isError) {
+          fetchList.push("ques");
+          isError = false;
+          document.getElementsByClassName("alert-holder")[0].style.display = "none";
+          let q = randomQuestionWord(jsonQuestion);
+          if (q.length == 3) {
+            document.getElementById("question").innerHTML = q[1]+" <b>"+q[0]+"</b>";
+            correctAnswer = q[2];
+          } else {
+            document.getElementById("question").innerHTML = q[1]+" "+q[2]
+                                                            +" <b>"+q[0]+"</b>";
+            correctAnswer = q[3];
+          }
         }
       });
   } else {
@@ -656,6 +773,7 @@ const questionword = () => {
 
 const comparative = () => {
   document.querySelector("#centered-title").textContent = "Comparative Creation";
+  var isError = false;
 
   if (fetchList.includes("comp") == false) {
     fetch("/wordbank/comparatives.json")
@@ -663,14 +781,26 @@ const comparative = () => {
       .then((data) => {
         jsonCompare = data;
       })
-      .catch((error) => console.error("Error loading JSON:", error))
+      .catch((error) => {
+        isError = true;
+        console.error("Fetch error: ", error);
+        document.getElementsByClassName("alert-holder")[0].style.display = "block";
+        document.getElementById("question").textContent = "....";
+        setTimeout(() => {
+          comparative();
+        }, 3000);
+      })
       .finally(() => {
-        fetchList.push("comp");
-        let q = randomComparative(jsonCompare);
-        document.getElementById("question").innerHTML = "<b>"+q[0]+"</b> (\""
-                                                        +q[1]+"\") → <div id='nobreaks'>____</div> (\""
-                                                        +q[2]+"\")";
-        correctAnswer = q[3];
+        if (!isError) {
+          fetchList.push("comp");
+          isError = false;
+          document.getElementsByClassName("alert-holder")[0].style.display = "none";
+          let q = randomComparative(jsonCompare);
+          document.getElementById("question").innerHTML = "<b>"+q[0]+"</b> (\""
+                                                          +q[1]+"\") → <div id='nobreaks'>____</div> (\""
+                                                          +q[2]+"\")";
+          correctAnswer = q[3];
+        }
       });
   } else {
     let q = randomComparative(jsonCompare);
@@ -715,6 +845,9 @@ const resetForm = (newQuestion) => {
       window.clearTimeout(id);
   }
 
+  // Remove error from past exercises
+  document.getElementsByClassName("alert-holder")[0].style.display = "none";
+
   // Reset Result and input answer field
   document.getElementById("result").textContent = "Result: ";
   document.getElementById("inputAnswer").value = "";
@@ -757,7 +890,7 @@ const resetForm = (newQuestion) => {
         demonstrative();
         break;
       case "Question Word Cases":
-        questionword();
+        questionWord();
         break;
       case "Comparative Creation":
         comparative();

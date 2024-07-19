@@ -46,6 +46,18 @@ body {
 
 <body>
 
+	<div class="alert-holder" style="display: none;">
+		<div class="alert alert-warning position-absolute d-flex align-items-center top-0 start-50 translate-middle-x" role="alert" style="margin-top: 10px;">
+			<svg xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" width="18" height="18" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+				<path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+			</svg>
+			<div class="d-flex align-items-center">
+				<strong role="status">Network Error! Retrying&nbsp;&nbsp;&nbsp;</strong>
+				<div class="spinner-border text-warning ms-auto" aria-hidden="true"></div>
+			</div>
+		</div>
+	</div>
+
 	<!-- Exercises Dropdown -->
 	<div class="dropdown position-fixed top-0 start-0 p-2">
 		<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">Exercise Type </button>
@@ -58,7 +70,7 @@ body {
 			<li><button class="dropdown-item" type="button" onclick="resetForm(false); pronoun();">Pronoun Cases</button></li>
 			<li><button class="dropdown-item" type="button" onclick="resetForm(false); possesive();">Possesive Pronoun + Сам Cases</button></li>
 			<li><button class="dropdown-item" type="button" onclick="resetForm(false); demonstrative();">Demonstrative + Весь Cases</button></li>
-			<li><button class="dropdown-item" type="button" onclick="resetForm(false); questionword();">Question Word Cases</button></li>
+			<li><button class="dropdown-item" type="button" onclick="resetForm(false); questionWord();">Question Word Cases</button></li>
 			<li><button class="dropdown-item" type="button" onclick="resetForm(false); comparative();">Comparative Creation</button></li>
 		</ul>
 	</div>
