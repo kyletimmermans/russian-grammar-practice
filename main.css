@@ -1,6 +1,12 @@
 /* Shared CSS */
 
+@font-face {
+	font-family: 'Trolley';
+	src: url("/assets/fonts/Trolley.woff2") format('woff2');
+}
+
 #centered-title {
+	font-family: 'Trolley';
 	position: relative;
 	color: white;
 	text-align: center;
@@ -8,11 +14,13 @@
 }
 
 #question {
+	font-family: 'Trolley';
 	color: white;
 	text-align: center;
 }
 
 #result {
+	font-family: 'Trolley';
 	color: white;
 	text-align: center;
 }
