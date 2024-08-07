@@ -1,9 +1,8 @@
 // Keep track of JSON information
 var jsonVerb, jsonNoun, jsonAdj, jsonPronoun;
 var jsonPossess, jsonDemonst, jsonQuestion;
-var jsonCompare,
-  correctAnswer,
-  fetchList = [];
+var jsonCompare, jsonShortFormAdj;
+var correctAnswer, fetchList = [];
 
 
 // Start with verbs on site load
@@ -346,6 +345,34 @@ const randomComparative = (data) => {
           randomComp.translation,
           randomComp.ec,
           randomComp.c];
+};
+
+
+const randomShortFormAdj = (data) => {
+  let randomShortFormAdj =
+    data.shortformadjective[getRandomInt(0, data.shortformadjective.length - 1)];
+
+  let gender = randomGender(true)[0];
+  let cyrillicPronoun;
+  switch (gender) {
+    case "m":
+      cyrillicPronoun = "Он";
+      break;
+    case "f":
+      cyrillicPronoun = "Она";
+      break;
+    case "n":
+      cyrillicPronoun = "Оно";
+      break;
+    case "p":
+      cyrillicPronoun = "Они";
+      break;
+  }
+
+  return [cyrillicPronoun,
+          randomShortFormAdj.name,
+          randomShortFormAdj.translation,
+          randomShortFormAdj.shortforms[gender]];
 };
 
 
@@ -802,6 +829,47 @@ const comparative = () => {
 };
 
 
+const shortFormAdj = () => {
+  document.querySelector("#centered-title").textContent = "Short Form Adjectives";
+  var isError = false;
+
+  if (fetchList.includes("shortFormAdj") == false) {
+    fetch("/wordbank/short-form-adjectives.json")
+      .then((response) => response.json())
+      .then((data) => {
+        jsonShortFormAdj = data;
+      })
+      .catch((error) => {
+        isError = true;
+        console.error("Fetch error: ", error);
+        document.getElementsByClassName("alert-holder")[0].style.display = "block";
+        document.getElementById("question").textContent = "....";
+        setTimeout(() => {
+          shortFormAdj();
+        }, 3000);
+      })
+      .finally(() => {
+        if (!isError) {
+          fetchList.push("shortFormAdj");
+          document.getElementsByClassName("alert-holder")[0].style.display = "none";
+          let q = randomShortFormAdj(jsonShortFormAdj);
+          document.getElementById("question").innerHTML = q[0]+" <b>"+q[1]+"</b>"
+                                                          +" (\""+q[2]+"\")";
+          correctAnswer = q[3];
+        }
+      });
+  } else {
+    let q = randomShortFormAdj(jsonShortFormAdj);
+    document.getElementById("question").innerHTML = q[0]+" <b>"+q[1]+"</b>"
+                                                    +" (\""+q[2]+"\")";
+    correctAnswer = q[3];
+  }
+};
+
+
+// Breakpoint from fetchers to extra \\
+
+
 const checkAnswer = () => {
   let answer = document.getElementById("inputAnswer").value.toLowerCase();
   if (answer.replace(/\s/g, "") == correctAnswer.toLowerCase()) {
@@ -884,6 +952,9 @@ const resetForm = (newQuestion) => {
         break;
       case "Comparative Creation":
         comparative();
+        break;
+      case "Short Form Adjectives":
+        shortFormAdj();
         break;
       default:
         verb();

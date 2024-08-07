@@ -21,13 +21,11 @@
 
 User-agent: *
 Allow: /$
-Disallow: /favicon/
+Disallow: /assets/
 Disallow: /media/
-Disallow: /mobile/
 Disallow: /resources/
 Disallow: /wordbank/
 Disallow: /.gitignore
-Disallow: /404.html
 Disallow: /LICENSE
 Disallow: /README.md
 Disallow: /app.js
