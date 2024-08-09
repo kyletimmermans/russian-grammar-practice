@@ -10,28 +10,28 @@
 
 ### Desktop View
 <p align="center">
-  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/desktop_view.png?raw=true" alt="Desktop View"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/desktop_view_v2.png?raw=true" alt="Desktop View"/>
 </p>
 
 </br>
 
 ### Mobile Portrait View
 <p align="center">
-  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/mobile_portrait.png?raw=true" alt="Mobile Portrait View"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/mobile_portrait_v2.png?raw=true" alt="Mobile Portrait View"/>
 </p>
 
 </br>
 
 ### Mobile Landscape View
 <p align="center">
-  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/mobile_landscape.png?raw=true" alt="Mobile Landscape View"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/mobile_landscape_v2.png?raw=true" alt="Mobile Landscape View"/>
 </p>
 
 </br>
 
 ### Exercise Types
 <p align="center">
-  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/exercise_types.png?raw=true" alt="Exercise Types"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/exercise_types_v2.png?raw=true" alt="Exercise Types"/>
 </p>
 
 </br>
@@ -45,26 +45,26 @@
 
 ### Correct Answer
 <p align="center">
-  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/correct-answer.png?raw=true" alt="Exercise Types"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/correct-answer_v2.png?raw=true" alt="Exercise Types"/>
 </p>
 
 </br>
 
 ### Incorrect Answer
 <p align="center">
-  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/incorrect-answer.png?raw=true" alt="About Modal"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/incorrect-answer_v2.png?raw=true" alt="About Modal"/>
 </p>
 
 </br>
 
 ### Network Error Handling (Desktop)
 <p align="center">
-  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/network_error_handling_desktop.png?raw=true" alt="Network Error Handling Desktop"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/network_error_handling_desktop_v2.png?raw=true" alt="Network Error Handling Desktop"/>
 </p>
 
 </br>
 
 ### Network Error Handling (Mobile)
 <p align="center">
-  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/network_error_handling_mobile.png?raw=true" alt="Network Error Handling Mobile"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/network_error_handling_mobile_v2.png?raw=true" alt="Network Error Handling Mobile"/>
 </p>
