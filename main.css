@@ -44,3 +44,6 @@
 
 ::selection { background: rgba(13, 202, 240, 0.5) !important; }
 ::-moz-selection { background: rgba(13, 202, 240, 0.5) !important; }
+
+/* Center inputted anwse */
+#inputAnswer { text-align: center; }
