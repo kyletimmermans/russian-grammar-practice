@@ -66,5 +66,5 @@
 
 ### Network Error Handling (Mobile)
 <p align="center">
-  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/network_error_handling_mobile_v2.png?raw=true" alt="Network Error Handling Mobile"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/network_error_handling_mobile_v3.png?raw=true" alt="Network Error Handling Mobile"/>
 </p>
