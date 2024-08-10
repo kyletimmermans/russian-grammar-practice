@@ -1,4 +1,4 @@
-document.addEventListener("window.onload", function() {
+document.addEventListener("DOMContentLoaded", function() {
 	var modal = new bootstrap.Modal(document.getElementById("aboutModal"));
 	var dropdown = new bootstrap.Dropdown(document.getElementById("dropdownMenu2"));
 	if (window.location.hash.toLowerCase() === "#about") {
