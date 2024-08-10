@@ -9,8 +9,8 @@ var isMobile = window.mobileCheck();
 
 // Is mobile, needs mobile (doesn't have mobile in URL)
 if (isMobile && window.location.href.indexOf("mobile") == -1) {
-    window.location.replace("/mobile/");
+    window.location.replace("/mobile/"+window.location.hash);
 // Is desktop, needs desktop (mobile in url)
 } else if (!isMobile && window.location.href.indexOf("mobile") > -1) {
-    window.location.replace('/');
+    window.location.replace('/'+window.location.hash);
 }
