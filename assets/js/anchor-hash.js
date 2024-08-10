@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("window.onload", function() {
 	if (window.location.hash === "#About" || window.location.hash === "#about") {
 			var modal = new bootstrap.Modal(document.getElementById("aboutModal"));
 			modal.show();
