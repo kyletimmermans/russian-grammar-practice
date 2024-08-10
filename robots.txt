@@ -31,7 +31,6 @@ Disallow: /README.md
 Disallow: /app.js
 Disallow: /apple-touch-icon.png
 Disallow: /browserconfig.xml
-Disallow: /favicon.ico
 Disallow: /humans.txt
 Disallow: /main.css
 Disallow: /site.webmanifest
