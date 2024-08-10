@@ -1,9 +1,11 @@
 document.addEventListener("window.onload", function() {
-	if (window.location.hash === "#About" || window.location.hash === "#about") {
-			var modal = new bootstrap.Modal(document.getElementById("aboutModal"));
+	var modal = new bootstrap.Modal(document.getElementById("aboutModal"));
+	var dropdown = new bootstrap.Dropdown(document.getElementById("dropdownMenu2"));
+	if (window.location.hash.toLowerCase() === "#about") {
+			dropdown.hide();
 			modal.show();
-	} else if (window.location.hash === "#Exercises" || window.location.hash === "#exercises") {
-			var dropdown = new bootstrap.Dropdown(document.getElementById("dropdownMenu2"));
+	} else if (window.location.hash.toLowerCase() === "#exercises") {
+			modal.hide();
 			dropdown.show();
 	}
 });
