@@ -581,6 +581,16 @@
       }
     },
     {
+      "name": "популярный",
+      "translation": "popular",
+      "shortforms": {
+        "m": "популярен",
+        "f": "популярна",
+        "n": "популярно",
+        "p": "популярны"
+      }
+    },
+    {
       "name": "красивый",
       "translation": "beautiful",
       "shortforms": {
