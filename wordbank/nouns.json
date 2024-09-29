@@ -2521,6 +2521,30 @@
       }
     },
     {
+      "name": "один",
+      "translation": "one",
+      "gender": "masculine",
+      "animate": false,
+      "conjugations": {
+        "s": {
+          "nm": "один",
+          "gn": "одного",
+          "dt": "одному",
+          "ac": "один",
+          "in": "одним",
+          "pr": "одном"
+        },
+        "p": {
+          "nm": "одни",
+          "gn": "одних",
+          "dt": "одним",
+          "ac": "одни",
+          "in": "одними",
+          "pr": "одних"
+        }
+      }
+    },
+    {
       "name": "два",
       "translation": "two",
       "gender": "masculine",
