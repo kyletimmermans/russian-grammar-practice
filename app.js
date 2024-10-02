@@ -665,8 +665,8 @@ const pronoun = () => {
 };
 
 
-const possesive = () => {
-  document.querySelector("#centered-title").textContent = "Possesive Pronoun + Сам Cases";
+const possessive = () => {
+  document.querySelector("#centered-title").textContent = "Possessive Pronoun + Сам Cases";
   var isError = false;
 
   if (fetchList.includes("poss") == false) {
@@ -681,7 +681,7 @@ const possesive = () => {
         document.getElementsByClassName("alert-holder")[0].style.display = "block";
         document.getElementById("question").textContent = "....";
         setTimeout(() => {
-          possesive();
+          possessive();
         }, 3000);
       })
       .finally(() => {
@@ -941,8 +941,8 @@ const resetForm = (newQuestion) => {
       case "Pronoun Cases":
         pronoun();
         break;
-      case "Possesive Pronoun + Сам Cases":
-        possesive();
+      case "Possessive Pronoun + Сам Cases":
+        possessive();
         break;
       case "Demonstrative + Весь Cases":
         demonstrative();
