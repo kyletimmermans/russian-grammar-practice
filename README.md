@@ -32,7 +32,7 @@
 
 ### Exercise Types
 <p align="center">
-  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/exercise_types_v2.png?raw=true" alt="Exercise Types"/>
+  <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/exercise_types_v3.png?raw=true" alt="Exercise Types"/>
 </p>
 
 </br>
