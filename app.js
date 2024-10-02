@@ -5,9 +5,59 @@ var jsonCompare, jsonShortFormAdj;
 var correctAnswer, fetchList = [];
 
 
-// Start with verbs on site load
+// Anchor-Hash tag handling
+// Go to specified exercise on load (verb() default if none chosen)
 document.addEventListener("DOMContentLoaded", (event) => {
-  verb();
+  let anchorHash = window.location.hash.toLowerCase();
+
+  switch (anchorHash) {
+    case "#verbs":
+      verb();
+      break;
+    case "#singular-nouns":
+      singNoun();
+      break;
+    case "#plural-nouns":
+      plurNoun();
+      break;
+    case "#singular-adjectives":
+      singAdj();
+      break;
+    case "#plural-adjectives":
+      plurAdj();
+      break;
+    case "#pronouns":
+      pronoun();
+      break;
+    case "#possessive-pronouns":
+      possessive();
+      break;
+    case "#demonstratives":
+      demonstrative();
+      break;
+    case "#question-words":
+      questionWord();
+      break;
+    case "#comparatives":
+      comparative();
+      break;
+    case "#short-form-adjectives":
+      shortFormAdj();
+      break;
+    case "#about":
+      var modal = new bootstrap.Modal(document.getElementById("aboutModal"));
+      var dropdown = new bootstrap.Dropdown(document.getElementById("dropdownMenu2"));
+      dropdown.hide();
+      modal.show();
+      break
+    case "#exercises":
+      var modal = new bootstrap.Modal(document.getElementById("aboutModal"));
+      var dropdown = new bootstrap.Dropdown(document.getElementById("dropdownMenu2"));
+      modal.hide();
+      dropdown.show();
+    default:
+      verb();
+  }
 });
 
 
@@ -376,11 +426,14 @@ const randomShortFormAdj = (data) => {
 };
 
 
-// Split point from random generators to fetchers \\
+// ######################################################
+// ### Split point from random generators to fetchers ###
+// ######################################################
 
 
 const verb = () => {
   document.querySelector("#centered-title").textContent = "Verb Conjugations";
+  window.location.hash = "#verbs"
   var isError = false;
 
   if (fetchList.includes("verb") == false) {
@@ -421,6 +474,7 @@ const verb = () => {
 
 const singNoun = () => {
   document.querySelector("#centered-title").textContent = "Singular Noun Cases";
+  window.location.hash = "#singular-nouns"
   var isError = false;
 
   if (fetchList.includes("noun") == false) {
@@ -475,6 +529,7 @@ const singNoun = () => {
 
 const plurNoun = () => {
   document.querySelector("#centered-title").textContent = "Plural Noun Cases";
+  window.location.hash = "#plural-nouns"
   var isError = false;
 
   if (fetchList.includes("noun") == false) {
@@ -527,6 +582,7 @@ const plurNoun = () => {
 
 const singAdj = () => {
   document.querySelector("#centered-title").textContent = "Singular Adjective Cases";
+  window.location.hash = "#singular-adjectives"
   var isError = false;
 
   if (fetchList.includes("adj") == false) {
@@ -568,6 +624,7 @@ const singAdj = () => {
 
 const plurAdj = () => {
   document.querySelector("#centered-title").textContent = "Plural Adjective Cases";
+  window.location.hash = "#plural-adjectives"
   var isError = false;
 
   if (fetchList.includes("adj") == false) {
@@ -608,6 +665,7 @@ const plurAdj = () => {
 
 const pronoun = () => {
   document.querySelector("#centered-title").textContent = "Pronoun Cases";
+  window.location.hash = "#pronouns"
   var isError = false;
 
   if (fetchList.includes("pro") == false) {
@@ -667,6 +725,7 @@ const pronoun = () => {
 
 const possessive = () => {
   document.querySelector("#centered-title").textContent = "Possessive Pronoun + Сам Cases";
+  window.location.hash = "#possessive-pronouns"
   var isError = false;
 
   if (fetchList.includes("poss") == false) {
@@ -705,6 +764,7 @@ const possessive = () => {
 
 const demonstrative = () => {
   document.querySelector("#centered-title").textContent = "Demonstrative + Весь Cases";
+  window.location.hash = "#demonstratives"
   var isError = false;
 
   if (fetchList.includes("demo") == false) {
@@ -743,6 +803,7 @@ const demonstrative = () => {
 
 const questionWord = () => {
   document.querySelector("#centered-title").textContent = "Question Word Cases";
+  window.location.hash = "#question-words"
   var isError = false;
 
   if (fetchList.includes("ques") == false) {
@@ -791,6 +852,7 @@ const questionWord = () => {
 
 const comparative = () => {
   document.querySelector("#centered-title").textContent = "Comparative Creation";
+  window.location.hash = "#comparatives"
   var isError = false;
 
   if (fetchList.includes("comp") == false) {
@@ -831,6 +893,7 @@ const comparative = () => {
 
 const shortFormAdj = () => {
   document.querySelector("#centered-title").textContent = "Short Form Adjectives";
+  window.location.hash = "#short-form-adjectives"
   var isError = false;
 
   if (fetchList.includes("shortFormAdj") == false) {
