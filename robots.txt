@@ -28,6 +28,7 @@ Disallow: /wordbank/
 Disallow: /.gitignore
 Disallow: /LICENSE
 Disallow: /README.md
+Disallow: /SECURITY.md
 Disallow: /app.js
 Disallow: /apple-touch-icon.png
 Disallow: /browserconfig.xml

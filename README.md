@@ -69,3 +69,8 @@
 <p align="center">
   <img src="https://github.com/kyletimmermans/russian-grammar-practice/blob/master/media/network_error_handling_mobile_v3.png?raw=true" alt="Network Error Handling Mobile"/>
 </p>
+
+<div>&#8203;</div>
+
+# Reporting Vulnerabilities
+To report a vulnerability, see [SECURITY.md](SECURITY.md)
