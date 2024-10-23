@@ -49,12 +49,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
       var dropdown = new bootstrap.Dropdown(document.getElementById("dropdownMenu2"));
       dropdown.hide();
       modal.show();
-      break
+      verb();  // Need an exercise type after opening
+      break;
     case "#exercises":
       var modal = new bootstrap.Modal(document.getElementById("aboutModal"));
       var dropdown = new bootstrap.Dropdown(document.getElementById("dropdownMenu2"));
       modal.hide();
       dropdown.show();
+      verb();
+      break;
     default:
       verb();
   }
