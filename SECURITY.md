@@ -5,7 +5,7 @@
 In order to report a vulnerability, please e-mail me at kyle@kyles.world with the following details:
 
  - [x] Description of the Vulnerability
- - [x] Vulnerability Type E.g. Buffer Overflow, XSS, etc.
+ - [x] Vulnerability Type E.g. Cross-Site Scripting (XSS), etc.
  - [x] Steps to Recreate the Issue
  - [x] Affected Versions
  - [x] If Known, a Mitigation for the Vulnerability
